@@ -1,6 +1,8 @@
 package net.MarkustheSlime.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.MarkustheSlime.tutorialmod.block.ModBlocks;
+import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +24,9 @@ public class Tutorialmod
     public Tutorialmod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModBlocks.register((modEventBus));
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
