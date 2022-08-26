@@ -29,7 +29,7 @@ public class ModBlocks {
     static final RegistryObject<Block> DM_ORE = registerBlock("dm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(2,4)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
     static final RegistryObject<Block> DEEPSLATE_DM_ORE = registerBlock("deepslate_dm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
