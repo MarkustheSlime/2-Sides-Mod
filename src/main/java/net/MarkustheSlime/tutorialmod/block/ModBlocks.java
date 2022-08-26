@@ -31,10 +31,10 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(2,4)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_DM_BLOCK = registerBlock("deepslate_dm_block",
+    static final RegistryObject<Block> DEEPSLATE_DM_ORE = registerBlock("deepslate_dm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(2,4)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
