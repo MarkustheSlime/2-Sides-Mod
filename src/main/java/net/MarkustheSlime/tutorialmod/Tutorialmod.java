@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 @Mod(Tutorialmod.MOD_ID)
 public class Tutorialmod
 {
+    //comment
     public static final String MOD_ID = "tutorialmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
