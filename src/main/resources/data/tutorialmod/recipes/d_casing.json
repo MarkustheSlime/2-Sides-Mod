@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " @ ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "tutorialmod:dm_shard"
+    },
+    "@": {
+      "item": "minecraft:shulker_shell"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:d_casing"
+  }
+}
