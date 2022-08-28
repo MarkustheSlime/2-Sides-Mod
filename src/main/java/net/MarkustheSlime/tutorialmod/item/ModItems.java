@@ -1,6 +1,7 @@
 package net.MarkustheSlime.tutorialmod.item;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.item.custom.TESTADVANCEDITEM;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +17,9 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
     public static final RegistryObject<Item> DM_Shard = ITEMS.register("dm_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+
+    public static final RegistryObject<Item> TESTADVANCEDITEM = ITEMS.register("testadvanceditem",
+            () -> new TESTADVANCEDITEM(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

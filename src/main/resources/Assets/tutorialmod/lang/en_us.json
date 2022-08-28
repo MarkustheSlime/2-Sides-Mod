@@ -6,5 +6,7 @@
   "block.tutorialmod.dm_ore": "Dwarven Magic Ore",
   "block.tutorialmod.deepslate_dm_ore": "Deepslate Dwarven Magic Ore",
 
+  "item.tutorialmod.testadvanceditem": "Test Advanced Item",
+
   "itemGroup.tutorialtab": "2 Sides Tutorial Tab"
 }
