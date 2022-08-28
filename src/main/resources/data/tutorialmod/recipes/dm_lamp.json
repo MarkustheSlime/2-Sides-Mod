@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XGX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "tutorialmod:dm_shard"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:dm_lamp"
+  }
+}

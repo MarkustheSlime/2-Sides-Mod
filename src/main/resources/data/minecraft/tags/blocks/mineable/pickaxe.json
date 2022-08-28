@@ -3,6 +3,7 @@
   "values": [
     "tutorialmod:dm_ore",
     "tutorialmod:dm_block",
-    "tutorialmod:deepslate_dm_ore"
+    "tutorialmod:deepslate_dm_ore",
+    "tutorialmod:dm_lamp"
   ]
 }

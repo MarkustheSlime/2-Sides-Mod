@@ -1,14 +1,13 @@
 {
   "item.tutorialmod.dm_shard": "Dwarven Magic Shard",
   "item.tutorialmod.d_casing": "Dwarven Casing",
+  "item.tutorialmod.testadvanceditem": "Test Advanced Item",
 
   "block.tutorialmod.dm_block": "Dwarven Magic Block",
   "block.tutorialmod.dm_ore": "Dwarven Magic Ore",
   "block.tutorialmod.deepslate_dm_ore": "Deepslate Dwarven Magic Ore",
-
-  "item.tutorialmod.testadvanceditem": "Test Advanced Item",
-
   "block.tutorialmod.darkseeingblock": "Dark Seeing Block",
+  "block.tutorialmod.dm_lamp": "Dwarven Magic Lamp",
 
   "itemGroup.tutorialtab": "2 Sides Tutorial Tab"
 }

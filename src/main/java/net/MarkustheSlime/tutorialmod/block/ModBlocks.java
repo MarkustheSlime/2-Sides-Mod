@@ -1,6 +1,7 @@
 package net.MarkustheSlime.tutorialmod.block;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.block.custom.DM_Lamp_Block;
 import net.MarkustheSlime.tutorialmod.block.custom.DarkSeeingBlock;
 import net.MarkustheSlime.tutorialmod.item.ModCreativeModeTab;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
@@ -39,6 +40,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DarkSeeingBlock = registerBlock("darkseeingblock",
             () -> new DarkSeeingBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> DM_Lamp = registerBlock("dm_lamp",
+            () -> new DM_Lamp_Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
