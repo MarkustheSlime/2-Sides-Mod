@@ -1,6 +1,7 @@
 package net.MarkustheSlime.tutorialmod.block;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.block.custom.DarkSeeingBlock;
 import net.MarkustheSlime.tutorialmod.item.ModCreativeModeTab;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -35,6 +36,10 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> DarkSeeingBlock = registerBlock("darkseeingblock",
+            () -> new DarkSeeingBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
