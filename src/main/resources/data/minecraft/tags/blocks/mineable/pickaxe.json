@@ -1,9 +1,22 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:dm_ore",
     "tutorialmod:dm_block",
+    "tutorialmod:dm_ore",
+    "tutorialmod:soul_ore",
+    "tutorialmod:life_ore",
+    "tutorialmod:power_ore",
+    "tutorialmod:control_ore",
+    "tutorialmod:primal_ore",
+    "tutorialmod:vitality_ore",
+    "tutorialmod:meteorite",
     "tutorialmod:deepslate_dm_ore",
+    "tutorialmod:deepslate_soul_ore",
+    "tutorialmod:deepslate_life_ore",
+    "tutorialmod:deepslate_power_ore",
+    "tutorialmod:deepslate_control_ore",
+    "tutorialmod:deepslate_primal_ore",
+    "tutorialmod:deepslate_vitality_ore",
     "tutorialmod:dm_lamp"
   ]
 }
