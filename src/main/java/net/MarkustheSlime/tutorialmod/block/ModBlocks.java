@@ -3,6 +3,7 @@ package net.MarkustheSlime.tutorialmod.block;
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
 import net.MarkustheSlime.tutorialmod.block.custom.DM_Lamp_Block;
 import net.MarkustheSlime.tutorialmod.block.custom.DarkSeeingBlock;
+import net.MarkustheSlime.tutorialmod.block.custom.GlobsquachCropBlock;
 import net.MarkustheSlime.tutorialmod.item.ModCreativeModeTab;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -121,6 +123,9 @@ public class ModBlocks {
             () -> new DM_Lamp_Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
+            () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

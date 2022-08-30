@@ -1,8 +1,11 @@
 package net.MarkustheSlime.tutorialmod.item;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.block.ModBlocks;
 import net.MarkustheSlime.tutorialmod.item.custom.TESTADVANCEDITEM;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,6 +37,12 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
     public static final RegistryObject<Item> METEORITE_DEBRIS = ITEMS.register("meteorite_debris",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> GLOBSQUACH = ITEMS.register("globsquach",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)
+                    .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
+    public static final RegistryObject<Item> GLOBSQUACH_SEEDS = ITEMS.register("globsquach_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.GLOBSQUACH_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
     public static final RegistryObject<Item> TESTADVANCEDITEM = ITEMS.register("testadvanceditem",
             () -> new TESTADVANCEDITEM(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
