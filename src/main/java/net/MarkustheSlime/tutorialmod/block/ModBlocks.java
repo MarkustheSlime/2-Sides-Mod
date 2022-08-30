@@ -122,7 +122,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DM_Lamp = registerBlock("dm_lamp",
             () -> new DM_Lamp_Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()
-                    .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 0 : 15)), ModCreativeModeTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
