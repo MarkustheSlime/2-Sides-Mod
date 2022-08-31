@@ -4,9 +4,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
-import net.MarkustheSlime.tutorialmod.Tutorialmod;
-import net.MarkustheSlime.tutorialmod.item.ModItems;
-import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -19,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Tutorialmod.MOD_ID)
-public class ModEvents{
+public class ModEvents {
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
         if(event.getType() == VillagerProfession.TOOLSMITH) {

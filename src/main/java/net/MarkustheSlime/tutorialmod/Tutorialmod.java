@@ -3,6 +3,7 @@ package net.MarkustheSlime.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.tutorialmod.block.ModBlocks;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
+import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import net.MarkustheSlime.tutorialmod.painting.ModPaintings;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Tutorialmod.MOD_ID)
@@ -35,7 +37,9 @@ public class Tutorialmod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();
+        });
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
