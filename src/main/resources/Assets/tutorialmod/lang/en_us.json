@@ -34,7 +34,6 @@
   "block.tutorialmod.darkseeingblock": "Dark Seeing Block",
   "block.tutorialmod.dm_lamp": "Dwarven Magic Lamp",
 
-  "entity.minecraft.villager.nighttime_guru": "Nighttime Guru",
-
-  "itemGroup.tutorialtab": "2 Sides"
+  "itemGroup.tutorialtab": "2 Sides",
+  "entity.minecraft.villager.nighttime_guru": "Nighttime Guru"
 }
