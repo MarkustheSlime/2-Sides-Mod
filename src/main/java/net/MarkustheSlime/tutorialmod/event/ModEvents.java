@@ -29,7 +29,7 @@ public class ModEvents {
                     stack,10,8,0.02F));
         }
 
-        if(event.getType() == ModVillagers.NIGHTtIME_GURU.get()) {
+        if(event.getType() == ModVillagers.NIGHTTIME_GURU.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack stack = new ItemStack(ModItems.GLOBSQUACH.get(), 15);
             int villagerLevel = 1;

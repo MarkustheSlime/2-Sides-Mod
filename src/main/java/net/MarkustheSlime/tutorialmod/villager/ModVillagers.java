@@ -2,8 +2,7 @@ package net.MarkustheSlime.tutorialmod.villager;
 
 import com.google.common.collect.ImmutableSet;
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
-import net.MarkustheSlime.tutorialmod.block.ModBlocks;
-import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.block.custom.DarkSeeingBlock;
 import net.MarkustheSlime.tutorialmod.block.ModBlocks;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
@@ -26,7 +25,7 @@ public class ModVillagers {
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.DarkSeeingBlock.get().getStateDefinition().getPossibleStates()),
                     1, 1));
 
-    public static final RegistryObject<VillagerProfession> NIGHTtIME_GURU = VILLAGER_PROFESSIONS.register("nighttime_guru",
+    public static final RegistryObject<VillagerProfession> NIGHTTIME_GURU = VILLAGER_PROFESSIONS.register("nighttime_guru",
             () -> new VillagerProfession("nighttime_guru", x -> x.get() == DarkSeeingBlock_POI.get(),
                     x -> x.get() == DarkSeeingBlock_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
                     SoundEvents.VILLAGER_WORK_ARMORER));

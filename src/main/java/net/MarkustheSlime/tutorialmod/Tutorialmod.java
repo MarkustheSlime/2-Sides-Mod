@@ -30,6 +30,9 @@ public class Tutorialmod
         ModBlocks.register((modEventBus));
         ModItems.register(modEventBus);
 
+        ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
