@@ -30,87 +30,87 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DM_ORE = registerBlock("dm_ore",
+    public static final RegistryObject<Block> DM_ORE = registerBlock("dm_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(4,8)),ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> SOUL_ORE = registerBlock("soul_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> SOUL_ORE = registerBlock("soul_ore",
+    public static final RegistryObject<Block> LIFE_ORE = registerBlock("life_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> LIFE_ORE = registerBlock("life_ore",
+    public static final RegistryObject<Block> POWER_ORE = registerBlock("power_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> POWER_ORE = registerBlock("power_ore",
+    public static final RegistryObject<Block> CONTROL_ORE = registerBlock("control_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> CONTROL_ORE = registerBlock("control_ore",
+    public static final RegistryObject<Block> PRIMAL_ORE = registerBlock("primal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> PRIMAL_ORE = registerBlock("primal_ore",
+    public static final RegistryObject<Block> INFLUENCE_ORE = registerBlock("influence_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> INFLUENCE_ORE = registerBlock("influence_ore",
+    public static final RegistryObject<Block> VITALITY_ORE = registerBlock("vitality_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> VITALITY_ORE = registerBlock("vitality_ore",
+    public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
+    public static final RegistryObject<Block> DEEPSLATE_SOUL_ORE = registerBlock("deepslate_soul_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_SOUL_ORE = registerBlock("deepslate_soul_ore",
+    public static final RegistryObject<Block> DEEPSLATE_LIFE_ORE = registerBlock("deepslate_life_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_LIFE_ORE = registerBlock("deepslate_life_ore",
+    public static final RegistryObject<Block> DEEPSLATE_POWER_ORE = registerBlock("deepslate_power_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_POWER_ORE = registerBlock("deepslate_power_ore",
+    public static final RegistryObject<Block> DEEPSLATE_CONTROL_ORE = registerBlock("deepslate_control_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_CONTROL_ORE = registerBlock("deepslate_control_ore",
+    public static final RegistryObject<Block> DEEPSLATE_PRIMAL_ORE = registerBlock("deepslate_primal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_PRIMAL_ORE = registerBlock("deepslate_primal_ore",
+    public static final RegistryObject<Block> DEEPSLATE_INFLUENCE_ORE = registerBlock("deepslate_influence_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_INFLUENCE_ORE = registerBlock("deepslate_influence_ore",
+    public static final RegistryObject<Block> DEEPSLATE_VITALITY_ORE = registerBlock("deepslate_vitality_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    static final RegistryObject<Block> DEEPSLATE_VITALITY_ORE = registerBlock("deepslate_vitality_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);
-
-    static final RegistryObject<Block> DEEPSLATE_DM_ORE = registerBlock("deepslate_dm_ore",
+    public  static final RegistryObject<Block> DEEPSLATE_DM_ORE = registerBlock("deepslate_dm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(4,8)), ModCreativeModeTab.TUTORIAL_TAB);

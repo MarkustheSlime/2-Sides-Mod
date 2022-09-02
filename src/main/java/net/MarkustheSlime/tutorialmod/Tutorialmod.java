@@ -13,6 +13,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.MarkustheSlime.tutorialmod.painting.ModPaintings;
+import net.MarkustheSlime.tutorialmod.world.feature.ModConfiguredFeatures;
+import net.MarkustheSlime.tutorialmod.world.feature.ModPlacedFeatures;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Tutorialmod.MOD_ID)
@@ -32,6 +35,9 @@ public class Tutorialmod
 
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -35,5 +35,5 @@
   "block.tutorialmod.dm_lamp": "Dwarven Magic Lamp",
 
   "itemGroup.tutorialtab": "2 Sides",
-  "entity.minecraft.villager.nighttime_guru": "Nighttime Guru"
+  "entity.minecraft.villager.tutorialmod.nighttime_guru": "Nighttime Guru"
 }
