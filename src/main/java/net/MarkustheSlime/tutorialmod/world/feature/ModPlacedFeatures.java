@@ -20,6 +20,35 @@ public class ModPlacedFeatures {
                     commonOrePlacement(7, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
+    public static final RegistryObject<PlacedFeature> SOUL_ORE_PLACED = PLACED_FEATURES.register("soul_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.SOUL_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> LIFE_ORE_PLACED = PLACED_FEATURES.register("life_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.LIFE_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> POWER_ORE_PLACED = PLACED_FEATURES.register("power_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.POWER_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> CONTROL_ORE_PLACED = PLACED_FEATURES.register("control_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CONTROL_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> VITALITY_ORE_PLACED = PLACED_FEATURES.register("vitality_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.VITALITY_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> PRIMAL_ORE_PLACED = PLACED_FEATURES.register("primal_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.PRIMAL_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> INFLUENCE_ORE_PLACED = PLACED_FEATURES.register("influence_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.INFLUENCE_ORE.getHolder().get(),
+                    commonOrePlacement(7, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }
