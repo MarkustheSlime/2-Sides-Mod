@@ -16,8 +16,20 @@ public class ClientEvents {
 
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
-            if(KeyBinding.DRINKING_KEY.consumeClick()) {
-             Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed O!"));
+            if(KeyBinding.TK1_KEY.consumeClick()) {
+             Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed R!"));
+            }
+            if(KeyBinding.TK2_KEY.consumeClick()) {
+                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed T!"));
+            }
+            if(KeyBinding.TK3_KEY.consumeClick()) {
+                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed Y!"));
+            }
+            if(KeyBinding.TK4_KEY.consumeClick()) {
+                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed U!"));
+            }
+            if(KeyBinding.TK5_KEY.consumeClick()) {
+                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed I!"));
             }
         }
 
@@ -27,7 +39,11 @@ public class ClientEvents {
     public static class ClientModBusEvents{
         @SubscribeEvent
         public static void  onKeyRegister(RegisterKeyMappingsEvent event) {
-            event.register(KeyBinding.DRINKING_KEY);
+            event.register(KeyBinding.TK1_KEY);
+            event.register(KeyBinding.TK2_KEY);
+            event.register(KeyBinding.TK3_KEY);
+            event.register(KeyBinding.TK4_KEY);
+            event.register(KeyBinding.TK5_KEY);
         }
     }
 }
