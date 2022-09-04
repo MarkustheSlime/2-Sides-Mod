@@ -2,8 +2,8 @@ package net.MarkustheSlime.tutorialmod.event;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
 import net.MarkustheSlime.tutorialmod.networking.ModMessages;
-import net.MarkustheSlime.tutorialmod.networking.packet.EXAMPLEC2SPACKET;
 import net.MarkustheSlime.tutorialmod.networking.packet.MARKERCC2SPACKET;
+import net.MarkustheSlime.tutorialmod.networking.packet.MARKEUSEC2SPACKET;
 import net.MarkustheSlime.tutorialmod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -12,30 +12,32 @@ import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergy;
+import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergyProvider;
 
-public class ClientEvents {
+public class ClientEvents extends PlayerEnergy{
     @Mod.EventBusSubscriber (modid = Tutorialmod.MOD_ID, value = Dist.CLIENT)
     public static class ClientForgeEvents{
 
         @SubscribeEvent
-        public static void onKeyInput(InputEvent.Key event) {
+        public static void onKeyInput(InputEvent.Key event){
             if(KeyBinding.TK1_KEY.consumeClick()) {
-                ModMessages.sendToServer(new EXAMPLEC2SPACKET());
-            }
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
+                }
             if(KeyBinding.TK2_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed T!"));
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
             }
             if(KeyBinding.TK3_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed Y!"));
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
             }
             if(KeyBinding.TK4_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed U!"));
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
             }
             if(KeyBinding.TK5_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed I!"));
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
             }
             if(KeyBinding.MARKERC_KEY.consumeClick()) {
-                ModMessages.sendToServer(new MARKERCC2SPACKET());
+                ModMessages.sendToServer(new MARKEUSEC2SPACKET());
             }
         }
 

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 public class PlayerEnergyProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
     public static Capability<PlayerEnergy> PLAYER_ENERGY = CapabilityManager.get(new CapabilityToken<PlayerEnergy>() { });
 
-    private PlayerEnergy energy = null;
+    protected PlayerEnergy energy = null;
     private final LazyOptional<PlayerEnergy> optional = LazyOptional.of(this::createPlayerEnergy);
 
     private PlayerEnergy createPlayerEnergy() {

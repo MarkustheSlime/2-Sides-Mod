@@ -80,7 +80,7 @@ public class ModEvents {
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if(event.side == LogicalSide.SERVER) {
             event.player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
-                if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.030f) { // Once Every 60 Seconds on Avg
+                if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.0003f) { // Once Every 60 Seconds on Avg
                     energy.subEnergy(1);
                     event.player.sendSystemMessage(Component.literal("Subtracted Energy"));
                 }
