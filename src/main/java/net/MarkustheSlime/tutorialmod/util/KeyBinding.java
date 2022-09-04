@@ -8,7 +8,7 @@ import org.lwjgl.glfw.GLFW;
 public class KeyBinding {
 
     public static final String KEY_CATEGORY_TUTORIAL = "key.category.tutorialmod.tutorial";
-    public static final String TK1 = "key.tutorialmod.tk_1";
+    public static final String TK1 = "key.tutorialmod.tk1";
 
     public static final KeyMapping TK1_KEY = new KeyMapping(TK1, KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_R, KEY_CATEGORY_TUTORIAL);
@@ -32,4 +32,9 @@ public class KeyBinding {
 
     public static final KeyMapping TK5_KEY = new KeyMapping(TK5, KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_I, KEY_CATEGORY_TUTORIAL);
+
+    public static final String MARKERC = "key.tutorialmod.markerc";
+
+    public static final KeyMapping MARKERC_KEY = new KeyMapping(MARKERC, KeyConflictContext.IN_GAME,
+            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KEY_CATEGORY_TUTORIAL);
 }

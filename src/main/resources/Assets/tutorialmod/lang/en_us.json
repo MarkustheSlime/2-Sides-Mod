@@ -38,5 +38,12 @@
   "entity.minecraft.villager.tutorialmod.nighttime_guru": "Nighttime Guru",
 
   "key.category.tutorialmod.tutorial": "Tutorial Mod",
-  "key.tutorialmod.drink_water": "Drink Water"
+  "key.tutorialmod.tk1": "TK1",
+  "key.tutorialmod.tk2": "TK2",
+  "key.tutorialmod.tk3": "TK3",
+  "key.tutorialmod.tk4": "TK4",
+  "key.tutorialmod.tk5": "TK5",
+
+  "message.tutorialmod.markerc": "Recharging your Energy",
+  "message.tutorialmod.no_markerc": "No Dwarven Magic Essence nearby."
 }

@@ -3,6 +3,7 @@ package net.MarkustheSlime.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.tutorialmod.block.ModBlocks;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
+import net.MarkustheSlime.tutorialmod.networking.ModMessages;
 import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -49,6 +50,9 @@ public class Tutorialmod
         event.enqueueWork(() -> {
             ModVillagers.registerPOIs();
         });
+
+        ModMessages.register();
+
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)

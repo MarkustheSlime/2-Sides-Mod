@@ -1,6 +1,9 @@
 package net.MarkustheSlime.tutorialmod.event;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
+import net.MarkustheSlime.tutorialmod.networking.ModMessages;
+import net.MarkustheSlime.tutorialmod.networking.packet.EXAMPLEC2SPACKET;
+import net.MarkustheSlime.tutorialmod.networking.packet.MARKERCC2SPACKET;
 import net.MarkustheSlime.tutorialmod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -17,7 +20,7 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
             if(KeyBinding.TK1_KEY.consumeClick()) {
-             Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed R!"));
+                ModMessages.sendToServer(new EXAMPLEC2SPACKET());
             }
             if(KeyBinding.TK2_KEY.consumeClick()) {
                 Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed T!"));
@@ -30,6 +33,9 @@ public class ClientEvents {
             }
             if(KeyBinding.TK5_KEY.consumeClick()) {
                 Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed I!"));
+            }
+            if(KeyBinding.MARKERC_KEY.consumeClick()) {
+                ModMessages.sendToServer(new MARKERCC2SPACKET());
             }
         }
 
@@ -44,6 +50,7 @@ public class ClientEvents {
             event.register(KeyBinding.TK3_KEY);
             event.register(KeyBinding.TK4_KEY);
             event.register(KeyBinding.TK5_KEY);
+            event.register(KeyBinding.MARKERC_KEY);
         }
     }
 }
