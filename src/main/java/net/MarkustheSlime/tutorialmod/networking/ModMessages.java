@@ -1,7 +1,7 @@
 package net.MarkustheSlime.tutorialmod.networking;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
-import net.MarkustheSlime.tutorialmod.networking.packet.EXAMPLEC2SPACKET;
+import net.MarkustheSlime.tutorialmod.networking.packet.EnergyDataSyncS2CPacket;
 import net.MarkustheSlime.tutorialmod.networking.packet.MARKERCC2SPACKET;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,15 +28,15 @@ public class ModMessages {
 
         INSTANCE = net;
 
-        net.messageBuilder(EXAMPLEC2SPACKET.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(EXAMPLEC2SPACKET::new)
-                .encoder(EXAMPLEC2SPACKET::toBytes)
-                .consumerMainThread(EXAMPLEC2SPACKET::handle)
-                .add();
         net.messageBuilder(MARKERCC2SPACKET.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(MARKERCC2SPACKET::new)
                 .encoder(MARKERCC2SPACKET::toBytes)
                 .consumerMainThread(MARKERCC2SPACKET::handle)
+                .add();
+        net.messageBuilder(EnergyDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(EnergyDataSyncS2CPacket::new)
+                .encoder(EnergyDataSyncS2CPacket::toBytes)
+                .consumerMainThread(EnergyDataSyncS2CPacket::handle)
                 .add();
     }
 

@@ -1,6 +1,7 @@
 package net.MarkustheSlime.tutorialmod.networking.packet;
 
 import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergyProvider;
+import net.MarkustheSlime.tutorialmod.networking.ModMessages;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -49,6 +50,7 @@ public class MARKERCC2SPACKET {
                     energy.addEnergy(1);
                     player.sendSystemMessage(Component.literal("Current Energy " + energy.getEnergy())
                             .withStyle(ChatFormatting.LIGHT_PURPLE));
+                    ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), player);
                 });
                 //OUTPUT thirst level
             } else {
@@ -58,6 +60,7 @@ public class MARKERCC2SPACKET {
                 player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
                     player.sendSystemMessage(Component.literal("Current Energy " + energy.getEnergy())
                             .withStyle(ChatFormatting.DARK_PURPLE));
+                    ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), player);
                 });
                 //Check if player is near water
             }

@@ -45,5 +45,6 @@
   "key.tutorialmod.tk5": "TK5",
 
   "message.tutorialmod.markerc": "Recharging your Energy",
-  "message.tutorialmod.no_markerc": "No Dwarven Magic Essence nearby."
+  "message.tutorialmod.no_markerc": "No Dwarven Magic Essence nearby.",
+  "message.tutorialmod.markeuse": "Used some energy."
 }

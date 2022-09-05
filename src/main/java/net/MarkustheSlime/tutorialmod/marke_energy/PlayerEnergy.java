@@ -3,9 +3,9 @@ package net.MarkustheSlime.tutorialmod.marke_energy;
 import net.minecraft.nbt.CompoundTag;
 
 public class PlayerEnergy {
-    protected static int energy;
+    public static int energy;
     protected final int MIN_ENERGY = 0;
-    protected final int MAX_ENERGY = 100;
+    protected final int MAX_ENERGY = 10;
 
     public int getEnergy() {
         return energy;

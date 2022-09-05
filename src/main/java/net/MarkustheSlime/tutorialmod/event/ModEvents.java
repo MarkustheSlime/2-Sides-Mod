@@ -5,9 +5,12 @@ import net.MarkustheSlime.tutorialmod.Tutorialmod;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergy;
 import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergyProvider;
+import net.MarkustheSlime.tutorialmod.networking.ModMessages;
+import net.MarkustheSlime.tutorialmod.networking.packet.EnergyDataSyncS2CPacket;
 import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -18,6 +21,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,6 +29,8 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
+
+import static net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergy.energy;
 
 @Mod.EventBusSubscriber(modid = Tutorialmod.MOD_ID)
 public class ModEvents {
@@ -80,11 +86,22 @@ public class ModEvents {
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if(event.side == LogicalSide.SERVER) {
             event.player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
-                if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.0003f) { // Once Every 60 Seconds on Avg
+                if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.0015f) { // Once Every 30 Seconds on Avg
                     energy.subEnergy(1);
                     event.player.sendSystemMessage(Component.literal("Subtracted Energy"));
                 }
             });
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
+        if(!event.getLevel().isClientSide()) {
+            if(event.getEntity() instanceof ServerPlayer player) {
+                player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
+                    ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), player);
+                });
+            }
         }
     }
 }
