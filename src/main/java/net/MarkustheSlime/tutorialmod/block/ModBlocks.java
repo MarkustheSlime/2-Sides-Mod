@@ -1,18 +1,15 @@
 package net.MarkustheSlime.tutorialmod.block;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
-import net.MarkustheSlime.tutorialmod.block.custom.DM_Lamp_Block;
-import net.MarkustheSlime.tutorialmod.block.custom.DarkSeeingBlock;
-import net.MarkustheSlime.tutorialmod.block.custom.GlobsquachCropBlock;
+import net.MarkustheSlime.tutorialmod.block.custom.*;
+import net.MarkustheSlime.tutorialmod.fluid.ModFluids;
 import net.MarkustheSlime.tutorialmod.item.ModCreativeModeTab;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,6 +25,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DM_BLOCK = registerBlock("dm_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<WallBlock> DM_WALL = registerBlock("dm_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> DM_TABLE = registerBlock("dm_table",
+            () -> new DMTABLEBLOCK(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> DM_ORE = registerBlock("dm_ore",
@@ -126,6 +131,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
+    public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_DM_ESSENCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
