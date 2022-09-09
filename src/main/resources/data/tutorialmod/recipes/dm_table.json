@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WPW ",
+    "PDP",
+    "WPW"
+  ],
+  "key": {
+    "D": {
+      "item": "tutorialmod:dm_shard"
+    },
+      "W": {
+        "item": "tutorialmod:dm_wall"
+      },
+      "P": {
+        "tag": "minecraft:planks"
+      }
+    },
+      "result": {
+        "item": "tutorialmod:dm_block"
+      }
+  }

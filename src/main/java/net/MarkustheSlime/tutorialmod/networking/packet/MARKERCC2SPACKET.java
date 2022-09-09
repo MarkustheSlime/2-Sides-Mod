@@ -1,5 +1,7 @@
 package net.MarkustheSlime.tutorialmod.networking.packet;
 
+import net.MarkustheSlime.tutorialmod.block.ModBlocks;
+import net.MarkustheSlime.tutorialmod.fluid.ModFluids;
 import net.MarkustheSlime.tutorialmod.marke_energy.PlayerEnergyProvider;
 import net.MarkustheSlime.tutorialmod.networking.ModMessages;
 import net.minecraft.ChatFormatting;
@@ -12,9 +14,13 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
+
+import static net.MarkustheSlime.tutorialmod.block.ModBlocks.BLOCKS;
+import static net.minecraft.commands.arguments.blocks.BlockStateArgument.block;
 
 public class MARKERCC2SPACKET {
     private static final String MESSAGE_RC_MARKE = "message.tutorialmod.markerc";
@@ -39,7 +45,7 @@ public class MARKERCC2SPACKET {
             ServerPlayer player = context.getSender();
             ServerLevel level = player.getLevel();
 
-            if(hasWaterAroundThem(player, level, 2)) {
+            if(hasEssenceAroundThem(player, level, 2)) {
                 //Notify Player Water has been Drunk
                 player.sendSystemMessage(Component.translatable(MESSAGE_RC_MARKE).withStyle(ChatFormatting.LIGHT_PURPLE));
                 //play drinking sound
@@ -68,7 +74,7 @@ public class MARKERCC2SPACKET {
         return true;
     }
 
-    private boolean hasWaterAroundThem(ServerPlayer player, ServerLevel level, int size) {
+    private boolean hasEssenceAroundThem(ServerPlayer player, ServerLevel level, int size) {
         return level.getBlockStates(player.getBoundingBox().inflate(size))
                 .filter(state -> state.is(Blocks.WATER)).toArray().length > 0;
     }

@@ -2,10 +2,10 @@ package net.MarkustheSlime.tutorialmod.item;
 
 import net.MarkustheSlime.tutorialmod.Tutorialmod;
 import net.MarkustheSlime.tutorialmod.block.ModBlocks;
+import net.MarkustheSlime.tutorialmod.fluid.ModFluids;
 import net.MarkustheSlime.tutorialmod.item.custom.TESTADVANCEDITEM;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -46,6 +46,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> TESTADVANCEDITEM = ITEMS.register("testadvanceditem",
             () -> new TESTADVANCEDITEM(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> DM_ESSENCE_BUCKET = ITEMS.register("dm_essence_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_DM_ESSENCE,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
+            () -> new PickaxeItem(Tiers.NETHERITE, 8, 3f, new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).stacksTo(1)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

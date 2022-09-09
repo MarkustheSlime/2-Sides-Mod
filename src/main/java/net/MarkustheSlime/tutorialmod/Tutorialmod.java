@@ -2,9 +2,13 @@ package net.MarkustheSlime.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.tutorialmod.block.ModBlocks;
+import net.MarkustheSlime.tutorialmod.fluid.ModFluidType;
+import net.MarkustheSlime.tutorialmod.fluid.ModFluids;
 import net.MarkustheSlime.tutorialmod.item.ModItems;
 import net.MarkustheSlime.tutorialmod.networking.ModMessages;
 import net.MarkustheSlime.tutorialmod.villager.ModVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +44,9 @@ public class Tutorialmod
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluidType.register(modEventBus);
+        ModFluids.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -48,11 +55,9 @@ public class Tutorialmod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
-
-        ModMessages.register();
-
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -61,7 +66,8 @@ public class Tutorialmod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DM_ESSENCE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DM_ESSENCE.get(), RenderType.translucent());
         }
     }
 }
