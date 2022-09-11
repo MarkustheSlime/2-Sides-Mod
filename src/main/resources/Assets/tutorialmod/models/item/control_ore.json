@@ -1,3 +1,6 @@
 {
-  "parent": "tutorialmod:block/control_ore"
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "tutorialmod:block/control_ore"
+	}
 }

@@ -11,20 +11,25 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModFluidType {
+public class ModFluidTypes {
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
-    public static final ResourceLocation DM_ESSENCE_OVERLAY_RL = new ResourceLocation(Tutorialmod.MOD_ID, "misc/in_dm_essence");
+    public static final ResourceLocation DM_OVERLAY_RL = new ResourceLocation(Tutorialmod.MOD_ID, "misc/in_dm_water");
 
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, Tutorialmod.MOD_ID);
-    public static final RegistryObject<FluidType> DM_ESSENCE_TYPE = register("dm_essence",
+
+    public static final RegistryObject<FluidType> DM_ESSENCE_FLUID_TYPE = register("dm_essence_fluid",
             FluidType.Properties.create().lightLevel(2).density(15).viscosity(5).sound(SoundAction.get("drink"),
-                    SoundEvents.EXPERIENCE_ORB_PICKUP));
+                    SoundEvents.HONEY_DRINK));
+
+
+
     private static RegistryObject<FluidType> register(String name, FluidType.Properties properties) {
-        return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, DM_ESSENCE_OVERLAY_RL,
-                0x55FFFF, new Vector3f(85f / 255f, 255f / 255f, 255f / 255f), properties));
+        return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, DM_OVERLAY_RL,
+                0x33FEFF, new Vector3f(51f / 255f, 254f / 255f, 255f / 255f), properties));
     }
+
     public static void register(IEventBus eventBus) {
         FLUID_TYPES.register(eventBus);
     }

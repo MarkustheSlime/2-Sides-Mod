@@ -8,7 +8,7 @@
 	"elements": [
 		{
 			"from": [5, 3, 5],
-			"to": [10, 9, 10],
+			"to": [10, 7, 10],
 			"faces": {
 				"north": {"uv": [0, 0, 2.5, 3], "texture": "#0"},
 				"east": {"uv": [2.5, 0, 5, 3], "texture": "#0"},
@@ -19,8 +19,8 @@
 			}
 		},
 		{
-			"from": [6, 9, 6],
-			"to": [9, 10, 9],
+			"from": [6, 7, 6],
+			"to": [9, 8, 9],
 			"faces": {
 				"north": {"uv": [5.5, 7, 7, 7.5], "texture": "#0"},
 				"east": {"uv": [7, 7, 8.5, 7.5], "texture": "#0"},
@@ -67,6 +67,41 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 3.75, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 3.75, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 60, 0],
+			"translation": [0, 4, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -140, 0],
+			"translation": [0, 4, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"ground": {
+			"translation": [0, -0.25, 0],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"gui": {
+			"rotation": [0, 89, 0],
+			"translation": [0.5, 4, 0]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0],
+			"translation": [-0.5, 2, 0],
+			"scale": [0.45, 0.45, 0.45]
+		}
+	},
 	"groups": [
 		{
 			"name": "Shard",

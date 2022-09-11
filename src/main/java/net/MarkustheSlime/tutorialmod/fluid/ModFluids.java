@@ -14,14 +14,19 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModFluids {
     public static final DeferredRegister<Fluid> FLUIDS =
             DeferredRegister.create(ForgeRegistries.FLUIDS, Tutorialmod.MOD_ID);
-    public static final RegistryObject<FlowingFluid> SOURCE_DM_ESSENCE = FLUIDS.register("dm_essence",
-            () -> new ForgeFlowingFluid.Source(ModFluids.DM_ESSENCE_PROPERTIES));
+
+    public static final RegistryObject<FlowingFluid> SOURCE_DM_ESSENCE = FLUIDS.register("dm_essence_fluid",
+            () -> new ForgeFlowingFluid.Source(ModFluids.DM_ESSENCE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_DM_ESSENCE = FLUIDS.register("flowing_dm_essence",
-            () -> new ForgeFlowingFluid.Flowing(ModFluids.DM_ESSENCE_PROPERTIES));
-    public static final ForgeFlowingFluid.Properties DM_ESSENCE_PROPERTIES = new ForgeFlowingFluid.Properties(
-            ModFluidType.DM_ESSENCE_TYPE, SOURCE_DM_ESSENCE, FLOWING_DM_ESSENCE)
+            () -> new ForgeFlowingFluid.Flowing(ModFluids.DM_ESSENCE_FLUID_PROPERTIES));
+
+
+    public static final ForgeFlowingFluid.Properties DM_ESSENCE_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
+            ModFluidTypes.DM_ESSENCE_FLUID_TYPE, SOURCE_DM_ESSENCE, FLOWING_DM_ESSENCE)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.DM_ESSENCE_BLOCK)
             .bucket(ModItems.DM_ESSENCE_BUCKET);
+
+
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }

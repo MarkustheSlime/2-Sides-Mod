@@ -10,8 +10,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 /**
@@ -66,28 +66,33 @@ public class BaseFluidType extends FluidType {
             public ResourceLocation getStillTexture() {
                 return stillTexture;
             }
+
             @Override
             public ResourceLocation getFlowingTexture() {
                 return flowingTexture;
             }
+
             @Override
             public @Nullable ResourceLocation getOverlayTexture() {
                 return overlayTexture;
             }
+
             @Override
             public int getTintColor() {
                 return tintColor;
             }
+
             @Override
             public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level,
                                                     int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
                 return fogColor;
             }
+
             @Override
             public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick,
                                         float nearDistance, float farDistance, FogShape shape) {
                 RenderSystem.setShaderFogStart(1f);
-                RenderSystem.setShaderFogEnd(3f); // distance when the fog starts
+                RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
             }
         });
     }
