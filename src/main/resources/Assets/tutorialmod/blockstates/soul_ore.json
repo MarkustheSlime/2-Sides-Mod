@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/soul_ore"
+      "model": "twosidesmod:block/soul_ore"
     }
   }
 }

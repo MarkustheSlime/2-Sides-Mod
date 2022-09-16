@@ -7,13 +7,13 @@
   ],
   "key": {
     "#": {
-      "item": "tutorialmod:dm_shard"
+      "item": "twosidesmod:dm_shard"
     },
     "@": {
       "item": "minecraft:shulker_shell"
     }
   },
   "result": {
-    "item": "tutorialmod:d_casing"
+    "item": "twosidesmod:d_casing"
   }
 }

@@ -25,7 +25,7 @@
                   }
                 }
               ],
-              "name": "tutorialmod:deepslate_control_ore"
+              "name": "twosidesmod:deepslate_control_ore"
             },
             {
               "type": "minecraft:item",
@@ -48,7 +48,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "tutorialmod:control_shard"
+              "name": "twosidesmod:control_shard"
             }
           ]
         }

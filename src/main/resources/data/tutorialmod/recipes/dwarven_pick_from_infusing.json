@@ -1,0 +1,11 @@
+{
+  "type": "twosidesmod:magic_infusing",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_pick"
+    }
+  ],
+  "output": {
+    "item": "twosidesmod:dwarven_pick"
+  }
+}

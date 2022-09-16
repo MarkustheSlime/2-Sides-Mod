@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/deepslate_soul_ore"
+      "model": "twosidesmod:block/deepslate_soul_ore"
     }
   }
 }

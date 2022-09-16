@@ -1,6 +1,6 @@
 {
   "variants":{
-    "lit=true": {"model": "tutorialmod:block/dm_lamp_on"},
-    "lit=false": {"model": "tutorialmod:block/dm_lamp_off"}
+    "lit=true": {"model": "twosidesmod:block/dm_lamp_on"},
+    "lit=false": {"model": "twosidesmod:block/dm_lamp_off"}
   }
 }

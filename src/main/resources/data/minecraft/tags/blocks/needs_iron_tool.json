@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:dm_ore",
-    "tutorialmod:dm_block",
-    "tutorialmod:deepslate_dm_ore",
-    "tutorialmod:dm_lamp"
+    "twosidesmod:dm_ore",
+    "twosidesmod:dm_block",
+    "twosidesmod:deepslate_dm_ore",
+    "twosidesmod:dm_lamp"
 
   ]
 }

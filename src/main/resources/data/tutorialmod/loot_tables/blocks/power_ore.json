@@ -25,7 +25,7 @@
                   }
                 }
               ],
-              "name": "tutorialmod:power_ore"
+              "name": "twosidesmod:power_ore"
             },
             {
               "type": "minecraft:item",
@@ -48,7 +48,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "tutorialmod:power_shard"
+              "name": "twosidesmod:power_shard"
             }
           ]
         }

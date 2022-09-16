@@ -2,6 +2,6 @@
   "parent": "minecraft:block/crop",
   "render_type": "cutout",
   "textures": {
-    "crop": "tutorialmod:block/globsquach_stage3"
+    "crop": "twosidesmod:block/globsquach_stage3"
   }
 }

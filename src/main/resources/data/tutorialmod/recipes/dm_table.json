@@ -7,16 +7,16 @@
   ],
   "key": {
     "D": {
-      "item": "tutorialmod:dm_shard"
+      "item": "twosidesmod:dm_shard"
     },
       "W": {
-        "item": "tutorialmod:dm_wall"
+        "item": "twosidesmod:dm_wall"
       },
       "P": {
         "tag": "minecraft:planks"
       }
     },
       "result": {
-        "item": "tutorialmod:dm_block"
+        "item": "twosidesmod:dm_block"
       }
   }

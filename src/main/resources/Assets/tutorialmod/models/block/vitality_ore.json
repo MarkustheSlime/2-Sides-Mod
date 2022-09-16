@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tutorialmod:block/vitality_ore"
+    "all": "twosidesmod:block/vitality_ore"
   }
 }

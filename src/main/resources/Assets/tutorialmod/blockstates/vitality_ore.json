@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/vitality_ore"
+      "model": "twosidesmod:block/vitality_ore"
     }
   }
 }

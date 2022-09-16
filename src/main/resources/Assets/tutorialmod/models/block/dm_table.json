@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "tutorialmod:block/dm_table",
-		"particle": "tutorialmod:block/dm_table"
+		"0": "twosidesmod:block/dm_table",
+		"particle": "twosidesmod:block/dm_table"
 	},
 	"elements": [
 		{

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/influence_ore"
+      "model": "twosidesmod:block/influence_ore"
     }
   }
 }

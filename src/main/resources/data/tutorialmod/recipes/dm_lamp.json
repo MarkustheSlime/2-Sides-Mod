@@ -7,13 +7,13 @@
   ],
   "key": {
     "X": {
-      "item": "tutorialmod:dm_shard"
+      "item": "twosidesmod:dm_shard"
     },
     "G": {
       "item": "minecraft:glowstone"
     }
   },
   "result": {
-    "item": "tutorialmod:dm_lamp"
+    "item": "twosidesmod:dm_lamp"
   }
 }

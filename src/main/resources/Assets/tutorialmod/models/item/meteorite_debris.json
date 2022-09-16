@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "tutorialmod:item/meteorite_debris",
-		"particle": "tutorialmod:item/meteorite_debris"
+		"1": "twosidesmod:item/meteorite_debris",
+		"particle": "twosidesmod:item/meteorite_debris"
 	},
 	"elements": [
 		{

@@ -25,7 +25,7 @@
                   }
                 }
               ],
-              "name": "tutorialmod:deepslate_influence_ore"
+              "name": "twosidesmod:deepslate_influence_ore"
             },
             {
               "type": "minecraft:item",
@@ -48,7 +48,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "tutorialmod:influence_shard"
+              "name": "twosidesmod:influence_shard"
             }
           ]
         }

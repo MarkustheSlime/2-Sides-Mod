@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/control_ore"
+      "model": "twosidesmod:block/control_ore"
     }
   }
 }

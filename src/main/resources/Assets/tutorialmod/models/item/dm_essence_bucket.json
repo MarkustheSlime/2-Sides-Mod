@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "tutorialmod:item/dm_essence_bucket",
-		"particle": "tutorialmod:item/dm_essence_bucket"
+		"1": "twosidesmod:item/dm_essence_bucket",
+		"particle": "twosidesmod:item/dm_essence_bucket"
 	},
 	"elements": [
 		{

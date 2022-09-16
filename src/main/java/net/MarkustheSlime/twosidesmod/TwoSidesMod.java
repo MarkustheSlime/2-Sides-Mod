@@ -7,6 +7,7 @@ import net.MarkustheSlime.twosidesmod.fluid.ModFluidTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
+import net.MarkustheSlime.twosidesmod.recipe.ModRecipes;
 import net.MarkustheSlime.twosidesmod.screen.DmTableScreen;
 import net.MarkustheSlime.twosidesmod.screen.ModMenuTypes;
 import net.MarkustheSlime.twosidesmod.villager.ModVillagers;
@@ -53,6 +54,8 @@ public class TwoSidesMod
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

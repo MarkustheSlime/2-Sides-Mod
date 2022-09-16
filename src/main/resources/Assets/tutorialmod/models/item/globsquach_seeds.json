@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tutorialmod:item/globsquach_seeds"
+    "layer0": "twosidesmod:item/globsquach_seeds"
   }
 }

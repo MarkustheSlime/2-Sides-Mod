@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tutorialmod:dm_block"
+          "name": "twosidesmod:dm_block"
         }
       ]
     }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "tutorialmod:dm_shard"
+      "item": "twosidesmod:dm_shard"
     }
   },
   "result": {
-    "item": "tutorialmod:dm_block"
+    "item": "twosidesmod:dm_block"
   }
 }

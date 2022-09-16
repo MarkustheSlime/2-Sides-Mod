@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tutorialmod:block/deepslate_influence_ore"
+    "all": "twosidesmod:block/deepslate_influence_ore"
   }
 }
