@@ -19,7 +19,7 @@ public class ModFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, TwoSidesMod.MOD_ID);
 
-    public static final RegistryObject<FluidType> DM_ESSENCE_FLUID_TYPE = register("dm_essence_fluid",
+    public static final RegistryObject<FluidType> DM_ESSENCE_FLUID_TYPE = register("dm_essence_water_fluid",
             FluidType.Properties.create().lightLevel(2).density(15).viscosity(5).sound(SoundAction.get("drink"),
                     SoundEvents.HONEY_DRINK));
 

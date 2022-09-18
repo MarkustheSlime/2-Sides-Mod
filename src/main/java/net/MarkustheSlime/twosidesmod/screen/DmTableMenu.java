@@ -10,27 +10,29 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class DmTableMenu extends AbstractContainerMenu {
     public final DmTableBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private FluidStack fluidStack;
 
-    public DmTableMenu (int id, Inventory inv, FriendlyByteBuf extraData) {
-    this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
-
+    public DmTableMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public DmTableMenu (int id, Inventory inv, BlockEntity entity, ContainerData data) {
-    super(ModMenuTypes.DM_TABLE_MENU.get(), id);
-    checkContainerSize(inv, 3);
-    blockEntity = (DmTableBlockEntity) entity;
-    this.level = inv.player.level;
-    this.data = data;
+    public DmTableMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.DM_TABLE_MENU.get(), id);
+        checkContainerSize(inv, 3);
+        blockEntity = (DmTableBlockEntity) entity;
+        this.level = inv.player.level;
+        this.data = data;
+        this.fluidStack = blockEntity.getFluidStack();
 
-    addPlayerInventory(inv);
-    addPlayerHotbar(inv);
+        addPlayerInventory(inv);
+        addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 12, 15));
@@ -41,8 +43,21 @@ public class DmTableMenu extends AbstractContainerMenu {
         addDataSlots(data);
     }
 
+    public void setFluid(FluidStack fluidStack) {
+        this.fluidStack = fluidStack;
+    }
+
     public boolean isCrafting() {
         return data.get(0) > 0;
+    }
+
+    public FluidStack getFluidStack() {
+        return fluidStack;
+    }
+
+
+    public DmTableBlockEntity getBlockEntity() {
+        return this.blockEntity;
     }
 
     public int getScaledProgress() {
@@ -69,7 +84,7 @@ public class DmTableMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 5;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

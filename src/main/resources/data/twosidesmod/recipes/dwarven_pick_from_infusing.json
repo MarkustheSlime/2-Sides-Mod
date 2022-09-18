@@ -2,7 +2,7 @@
   "type": "twosidesmod:magic_infusing",
   "ingredients": [
     {
-      "item": "minecraft:iron_pick"
+      "item": "minecraft:iron_pickaxe"
     }
   ],
   "output": {

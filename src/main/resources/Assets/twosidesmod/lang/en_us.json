@@ -50,5 +50,8 @@
 
   "message.twosidesmod.markerc": "Recharging your Energy",
   "message.twosidesmod.no_markerc": "No Dwarven Magic Essence nearby.",
-  "message.twosidesmod.markeuse": "Used some energy."
+  "message.twosidesmod.markeuse": "Used some energy.",
+
+  "twosidesmod.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "twosidesmod.tooltip.liquid.amount": "%s mB"
 }

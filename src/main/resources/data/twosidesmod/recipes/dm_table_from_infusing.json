@@ -1,0 +1,11 @@
+{
+  "type": "twosidesmod:magic_infusing",
+  "ingredients": [
+    {
+      "item": "minecraft:furnace"
+    }
+  ],
+  "output": {
+    "item": "twosidesmod:dm_table"
+  }
+}
