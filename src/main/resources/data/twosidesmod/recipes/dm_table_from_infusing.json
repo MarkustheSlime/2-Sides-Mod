@@ -5,6 +5,9 @@
       "item": "minecraft:furnace"
     }
   ],
+  "fluid": {
+    "FluidName": "twosidesmod:dm_essence_water_fluid",
+    "Amount": 250},
   "output": {
     "item": "twosidesmod:dm_table"
   }

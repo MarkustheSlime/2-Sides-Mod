@@ -3,6 +3,7 @@ package net.MarkustheSlime.twosidesmod.networking;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.networking.packet.EnergyDataSyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.networking.packet.EnergySyncS2CPacket;
+import net.MarkustheSlime.twosidesmod.networking.packet.FluidSyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.networking.packet.MARKERCC2SPACKET;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

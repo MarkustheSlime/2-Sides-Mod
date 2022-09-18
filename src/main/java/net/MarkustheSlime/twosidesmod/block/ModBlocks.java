@@ -131,7 +131,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
-    public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_block",
+    public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_DM_ESSENCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

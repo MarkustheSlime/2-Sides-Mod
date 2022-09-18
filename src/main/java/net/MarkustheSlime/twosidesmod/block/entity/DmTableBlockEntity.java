@@ -5,6 +5,7 @@ import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.EnergySyncS2CPacket;
+import net.MarkustheSlime.twosidesmod.networking.packet.FluidSyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.recipe.DmTableRecipe;
 import net.MarkustheSlime.twosidesmod.screen.DmTableMenu;
 import net.MarkustheSlime.twosidesmod.util.ModEnergyStorage;
@@ -20,7 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -50,8 +50,8 @@ public class DmTableBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == ModItems.DM_Shard.get();
-
+                case 0 -> stack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).isPresent();
+                case 1 -> true;
                 case 2 -> false;
                 default -> super.isItemValid(slot, stack);
             };
@@ -143,9 +143,9 @@ public class DmTableBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return new DmTableMenu(id, inventory, this, this.data);
         ModMessages.sendToClients(new FluidSyncS2CPacket(this.getFluidStack(), worldPosition));
         ModMessages.sendToClients(new EnergySyncS2CPacket(this.ENERGY_STORAGE.getEnergyStored(), getBlockPos()));
+        return new DmTableMenu(id, inventory, this, this.data);
     }
 
     public IEnergyStorage getEnergyStorage() {

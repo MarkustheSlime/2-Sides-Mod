@@ -6,7 +6,6 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.recipe.DmTableRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
