@@ -1,11 +1,14 @@
 package net.MarkustheSlime.twosidesmod.event;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
+import net.MarkustheSlime.twosidesmod.block.entity.renderer.DmTableBlockEntityRenderer;
 import net.MarkustheSlime.twosidesmod.client.MarkeHudOverlay;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.MARKERCC2SPACKET;
 import net.MarkustheSlime.twosidesmod.util.KeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -56,6 +59,12 @@ public class ClientEvents extends PlayerEnergy{
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
             event.registerAboveAll("energy", MarkeHudOverlay.HUD_ENERGY);
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.DM_TABLE.get(),
+                    DmTableBlockEntityRenderer::new);
         }
     }
 }

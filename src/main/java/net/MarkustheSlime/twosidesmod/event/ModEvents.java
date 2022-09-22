@@ -2,6 +2,8 @@ package net.MarkustheSlime.twosidesmod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.entity.dm_golem.custom.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergyProvider;
@@ -20,6 +22,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
@@ -29,76 +32,87 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID)
+
 public class ModEvents {
-    @SubscribeEvent
-    public static void addCustomTrades(VillagerTradesEvent event) {
-        if(event.getType() == VillagerProfession.TOOLSMITH) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.TESTADVANCEDITEM.get(), 1);
-            int villagerLevel = 2;
+    @Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID)
+    public static class ForgeEvents {
+        @SubscribeEvent
+        public static void addCustomTrades(VillagerTradesEvent event) {
+            if(event.getType() == VillagerProfession.TOOLSMITH) {
+                Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+                ItemStack stack = new ItemStack(ModItems.TESTADVANCEDITEM.get(), 1);
+                int villagerLevel = 2;
 
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 2),
-                    stack,10,8,0.02F));
-        }
+                trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                        new ItemStack(Items.EMERALD, 2),
+                        stack,10,8,0.02F));
+            }
 
-        if(event.getType() == ModVillagers.NIGHTTIME_GURU.get()) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.GLOBSQUACH.get(), 15);
-            int villagerLevel = 1;
+            if(event.getType() == ModVillagers.NIGHTTIME_GURU.get()) {
+                Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+                ItemStack stack = new ItemStack(ModItems.GLOBSQUACH.get(), 15);
+                int villagerLevel = 1;
 
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 5),
-                    stack,10,8,0.02F));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
-        if(event.getObject() instanceof Player) {
-            if(!event.getObject().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).isPresent()) {
-                event.addCapability(new ResourceLocation(TwoSidesMod.MOD_ID, "properties"), new PlayerEnergyProvider());
+                trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                        new ItemStack(Items.EMERALD, 5),
+                        stack,10,8,0.02F));
             }
         }
-    }
 
-    @SubscribeEvent
-    public static void onPlayerCloned(PlayerEvent.Clone event) {
-        if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(oldStore -> {
-                event.getOriginal().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(newStore -> {
-                    newStore.copyFrom(oldStore);
-                });
-            });
-        }
-    }
-
-    @SubscribeEvent
-    public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
-        event.register(PlayerEnergy.class);
-    }
-
-    @SubscribeEvent
-    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        if(event.side == LogicalSide.SERVER) {
-            event.player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
-                if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.0003f) { // Once Every 60 Seconds on Avg
-                    energy.subEnergy(1);
-                    ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), ((ServerPlayer)event.player));
+        @SubscribeEvent
+        public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
+            if(event.getObject() instanceof Player) {
+                if(!event.getObject().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).isPresent()) {
+                    event.addCapability(new ResourceLocation(TwoSidesMod.MOD_ID, "properties"), new PlayerEnergyProvider());
                 }
-            });
+            }
         }
-    }
 
-    @SubscribeEvent
-    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
-        if(!event.getLevel().isClientSide()) {
-            if(event.getEntity() instanceof ServerPlayer player) {
-                player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
-                    ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), player);
+        @SubscribeEvent
+        public static void onPlayerCloned(PlayerEvent.Clone event) {
+            if(event.isWasDeath()) {
+                event.getOriginal().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(oldStore -> {
+                    event.getOriginal().getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(newStore -> {
+                        newStore.copyFrom(oldStore);
+                    });
                 });
             }
         }
+
+        @SubscribeEvent
+        public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
+            event.register(PlayerEnergy.class);
+        }
+
+        @SubscribeEvent
+        public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+            if(event.side == LogicalSide.SERVER) {
+                event.player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
+                    if(energy.getEnergy() > 0 && event.player.getRandom().nextFloat() < 0.0003f) { // Once Every 60 Seconds on Avg
+                        energy.subEnergy(1);
+                        ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), ((ServerPlayer)event.player));
+                    }
+                });
+            }
+        }
+
+        @SubscribeEvent
+        public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
+            if(!event.getLevel().isClientSide()) {
+                if(event.getEntity() instanceof ServerPlayer player) {
+                    player.getCapability(PlayerEnergyProvider.PLAYER_ENERGY).ifPresent(energy -> {
+                        ModMessages.sendToPlayer(new EnergyDataSyncS2CPacket(energy.getEnergy()), player);
+                    });
+                }
+            }
+        }
+    }
+    @Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModEventBusEvents {
+        @SubscribeEvent
+        public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+            event.put(ModEntityTypes.DM_GOLEM.get(), DmGolemEntity.setAttributes());
+        }
+
     }
 }

@@ -2,10 +2,12 @@ package net.MarkustheSlime.twosidesmod.item;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.TESTADVANCEDITEM;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -52,7 +54,13 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
-            () -> new PickaxeItem(Tiers.NETHERITE, 8, 3f, new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
+            () -> new PickaxeItem(Tiers.NETHERITE, 8, 3f,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> DM_GOLEM_SPAWNER = ITEMS.register("dm_golem_constructor",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DM_GOLEM, 0x55FFFF, 0x2DD7D7,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

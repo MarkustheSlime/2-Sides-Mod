@@ -3,6 +3,7 @@ package net.MarkustheSlime.twosidesmod;
 import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluidTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
@@ -25,6 +26,7 @@ import org.slf4j.Logger;
 import net.MarkustheSlime.twosidesmod.painting.ModPaintings;
 import net.MarkustheSlime.twosidesmod.world.feature.ModConfiguredFeatures;
 import net.MarkustheSlime.twosidesmod.world.feature.ModPlacedFeatures;
+import software.bernie.geckolib3.GeckoLib;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -56,6 +58,9 @@ public class TwoSidesMod
         ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
+
+        GeckoLib.initialize();
 
         modEventBus.addListener(this::commonSetup);
 

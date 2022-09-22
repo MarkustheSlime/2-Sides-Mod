@@ -6,6 +6,7 @@ import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.EnergySyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.networking.packet.FluidSyncS2CPacket;
+import net.MarkustheSlime.twosidesmod.networking.packet.ItemStackSyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.recipe.DmTableRecipe;
 import net.MarkustheSlime.twosidesmod.screen.DmTableMenu;
 import net.MarkustheSlime.twosidesmod.util.ModEnergyStorage;
@@ -45,6 +46,9 @@ public class DmTableBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if(!level.isClientSide()) {
+                ModMessages.sendToClients(new ItemStackSyncS2CPacket(this, worldPosition));
+            }
         }
 
         @Override
@@ -88,6 +92,24 @@ public class DmTableBlockEntity extends BlockEntity implements MenuProvider {
         return this.FLUID_TANK.getFluid();
     }
     private static final int ENERGY_REQ = 32;
+
+    public ItemStack getRenderStack() {
+        ItemStack stack;
+
+        if(!itemHandler.getStackInSlot(2).isEmpty()) {
+            stack = itemHandler.getStackInSlot(2);
+        } else {
+            stack = itemHandler.getStackInSlot(1);
+        }
+
+        return stack;
+    }
+
+    public void setHandler(ItemStackHandler itemStackHandler) {
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
+        }
+    }
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
