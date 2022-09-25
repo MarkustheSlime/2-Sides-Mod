@@ -3,6 +3,7 @@ package net.MarkustheSlime.twosidesmod.event;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.entity.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
@@ -112,6 +113,7 @@ public class ModEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.DM_GOLEM.get(), DmGolemEntity.setAttributes());
+            event.put(ModEntityTypes.DEEP_GORGON.get(), DeepGorgonEntity.setAttributes());
         }
 
     }
