@@ -54,11 +54,15 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
-            () -> new PickaxeItem(Tiers.NETHERITE, 8, 3f,
+            () -> new PickaxeItem(ModToolTiers.DwarvenMagic, 8, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> DM_GOLEM_SPAWNER = ITEMS.register("dm_golem_constructor",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DM_GOLEM, 0x55FFFF, 0x2DD7D7,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+
+    public static final RegistryObject<Item> DEEP_GORGON_SPAWNER = ITEMS.register("deep_gorgon_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DEEP_GORGON, 0x004f97, 0x00FF1F,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
 
     public static void register(IEventBus eventBus) {

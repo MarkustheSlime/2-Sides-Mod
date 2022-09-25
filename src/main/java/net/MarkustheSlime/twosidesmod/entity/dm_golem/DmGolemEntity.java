@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.entity.dm_golem.custom;
+package net.MarkustheSlime.twosidesmod.entity.dm_golem;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;

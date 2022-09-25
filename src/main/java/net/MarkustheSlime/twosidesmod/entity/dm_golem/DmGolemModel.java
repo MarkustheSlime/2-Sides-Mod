@@ -1,7 +1,6 @@
-package net.MarkustheSlime.twosidesmod.entity.dm_golem.client;
+package net.MarkustheSlime.twosidesmod.entity.dm_golem;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.entity.dm_golem.custom.DmGolemEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

@@ -1,7 +1,8 @@
 package net.MarkustheSlime.twosidesmod.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.entity.dm_golem.custom.DmGolemEntity;
+import net.MarkustheSlime.twosidesmod.entity.deep_gorgon.DeepGorgonEntity;
+import net.MarkustheSlime.twosidesmod.entity.dm_golem.DmGolemEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -19,6 +20,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(DmGolemEntity::new, MobCategory.MONSTER)
                             .sized(0.4f, 1.5f)
                             .build(new ResourceLocation(TwoSidesMod.MOD_ID, "dm_golem").toString()));
+
+    public static final RegistryObject<EntityType<DeepGorgonEntity>> DEEP_GORGON =
+            ENTITY_TYPES.register("deep_gorgon",
+                    () -> EntityType.Builder.of(DeepGorgonEntity::new, MobCategory.MONSTER)
+                            .sized(0.4f, 1.5f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "deep_gorgon").toString()));
 
 
     public static void register(IEventBus eventBus) {

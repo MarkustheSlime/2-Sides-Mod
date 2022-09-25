@@ -3,7 +3,7 @@ package net.MarkustheSlime.twosidesmod.event;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
-import net.MarkustheSlime.twosidesmod.entity.dm_golem.custom.DmGolemEntity;
+import net.MarkustheSlime.twosidesmod.entity.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergyProvider;

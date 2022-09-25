@@ -1,21 +1,5 @@
 {
   "replace": false,
   "values": [
-    "twosidesmod:soul_ore",
-    "twosidesmod:life_ore",
-    "twosidesmod:power_ore",
-    "twosidesmod:control_ore",
-    "twosidesmod:primal_ore",
-    "twosidesmod:influence_ore",
-    "twosidesmod:vitality_ore",
-    "twosidesmod:meteorite",
-    "twosidesmod:deepslate_dm_ore",
-    "twosidesmod:deepslate_soul_ore",
-    "twosidesmod:deepslate_life_ore",
-    "twosidesmod:deepslate_power_ore",
-    "twosidesmod:deepslate_control_ore",
-    "twosidesmod:deepslate_primal_ore",
-    "twosidesmod:deepslate_influence_ore",
-    "twosidesmod:deepslate_vitality_ore"
   ]
 }

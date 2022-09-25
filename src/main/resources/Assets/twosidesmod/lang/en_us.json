@@ -15,6 +15,7 @@
   "item.twosidesmod.dm_essence_bucket": "Dwarven Magic Essence Bucket",
   "item.twosidesmod.dwarven_pick": "Dwarven Magic Pickaxe",
   "item.twosidesmod.dm_golem_constructor": "Dwarven Magic Golem Constructor",
+  "item.twosidesmod.deep_gorgon_spawn_egg": "Deep Gorgon Spawn Egg",
 
   "block.twosidesmod.dm_block": "Dwarven Magic Block",
   "block.twosidesmod.dm_table": "Dwarven Magic Table",
@@ -38,7 +39,7 @@
   "block.twosidesmod.darkseeingblock": "Dark Seeing Block",
   "block.twosidesmod.dm_lamp": "Dwarven Magic Lamp",
   "block.twosidesmod.dm_wall": "Dwarven Magic Wall",
-  "block.twosidesmod.dm_essence_water_block": "Dwarven Magic Essence",
+  "fluid_type.twosidesmod.dm_essence_water_fluid": "Dwarven Magic Essence",
 
   "itemGroup.twosidestab": "2 Sides",
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",

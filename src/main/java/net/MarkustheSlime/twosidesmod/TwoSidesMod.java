@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.entity.deep_gorgon.DeepGorgonRenderer;
+import net.MarkustheSlime.twosidesmod.entity.dm_golem.DmGolemRenderer;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluidTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
@@ -15,6 +17,7 @@ import net.MarkustheSlime.twosidesmod.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -85,6 +88,9 @@ public class TwoSidesMod
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DM_ESSENCE.get(), RenderType.translucent());
 
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
+
+            EntityRenderers.register(ModEntityTypes.DM_GOLEM.get(), DmGolemRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DEEP_GORGON.get(), DeepGorgonRenderer::new);
         }
     }
 }
