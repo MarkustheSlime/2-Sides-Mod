@@ -40,6 +40,13 @@
   "block.twosidesmod.dm_lamp": "Dwarven Magic Lamp",
   "block.twosidesmod.dm_wall": "Dwarven Magic Wall",
   "fluid_type.twosidesmod.dm_essence_water_fluid": "Dwarven Magic Essence",
+  "block.twosidesmod.sun_sap_pine_log": "Sun Sap Pine Log",
+  "block.twosidesmod.sun_sap_pine_planks": "Sun Sap Pine Planks",
+  "block.twosidesmod.sun_sap_pine_wood": "Sun Sap Pine Wood",
+  "block.twosidesmod.stripped_sun_sap_pine_log": "Stripped Sun Sap Pine Log",
+  "block.twosidesmod.stripped_sun_sap_pine_wood": "Stripped Sun Sap Pine Wood",
+  "block.twosidesmod.sun_sap_pine_leaves": "Sun Sap Pine Leaves",
+  "block.twosidesmod.sun_sap_pine_sapling": "Sun Sap Pine Sapling",
 
   "itemGroup.twosidestab": "2 Sides",
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",

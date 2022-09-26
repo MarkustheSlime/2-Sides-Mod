@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "twosidesmod:block/sun_sap_pine_leaves"
+  },
+  "render_type": "cutout"
+}

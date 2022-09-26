@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "twosidesmod:block/sun_sap_pine_sapling"
+  },
+  "render_type": "cutout"
+}

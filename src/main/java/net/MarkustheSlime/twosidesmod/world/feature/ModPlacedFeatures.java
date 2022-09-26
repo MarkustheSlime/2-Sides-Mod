@@ -1,7 +1,10 @@
 package net.MarkustheSlime.twosidesmod.world.feature;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,7 +21,7 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> DM_ORE_PLACED = PLACED_FEATURES.register("dm_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.DM_ORE.getHolder().get(),
                     commonOrePlacement(7, // VeinsPerChunk
-                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
 
     public static final RegistryObject<PlacedFeature> SOUL_ORE_PLACED = PLACED_FEATURES.register("soul_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SOUL_ORE.getHolder().get(),
@@ -48,6 +51,20 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.INFLUENCE_ORE.getHolder().get(),
                     commonOrePlacement(7, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+
+    public static final RegistryObject<PlacedFeature> SUN_SAP_PINE_CHECKED = PLACED_FEATURES.register("sun_sap_pine_checked",
+            () -> new PlacedFeature(ModConfiguredFeatures.SUN_SAP_PINE.getHolder().get(),
+                    List.of(PlacementUtils.filteredByBlockSurvival(ModBlocks.SUN_SAP_PINE_SAPLING.get()))));
+
+    public static final RegistryObject<PlacedFeature> SUN_SAP_PINE_PLACED = PLACED_FEATURES.register("sun_sap_pine_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.SUN_SAP_PINE_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> DM_GEODE_PLACED = PLACED_FEATURES.register("dm_geode_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.DM_GEODE.getHolder().get(), List.of(
+                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                    BiomeFilter.biome())));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

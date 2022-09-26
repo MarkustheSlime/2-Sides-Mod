@@ -6,9 +6,24 @@ import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.GeodeBlockSettings;
+import net.minecraft.world.level.levelgen.GeodeCrackSettings;
+import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -74,6 +89,36 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> VITALITY_ORE = CONFIGURED_FEATURES.register("vitality_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_VITALITY_ORES.get(),7)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> SUN_SAP_PINE =
+            CONFIGURED_FEATURES.register("sun_sap_pine", () ->
+                    new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                            BlockStateProvider.simple(ModBlocks.SUN_SAP_PINE_LOG.get()),
+                            new StraightTrunkPlacer(5, 6, 3),
+                            BlockStateProvider.simple(ModBlocks.SUN_SAP_PINE_LEAVES.get()),
+                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                            new TwoLayersFeatureSize(1, 0, 2)).build()));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> SUN_SAP_PINE_SPAWN =
+            CONFIGURED_FEATURES.register("sun_sap_pine_spawn", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(
+                            ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get(),
+                            0.5F)), ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DM_GEODE = CONFIGURED_FEATURES.register("dm_geode",
+            () -> new ConfiguredFeature<>(Feature.GEODE,
+                    new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                            BlockStateProvider.simple(Blocks.DEEPSLATE),
+                            BlockStateProvider.simple(ModBlocks.DM_ORE.get()),
+                            BlockStateProvider.simple(Blocks.DIRT),
+                            BlockStateProvider.simple(Blocks.DIAMOND_BLOCK),
+                            List.of(ModBlocks.DM_BLOCK.get().defaultBlockState()),
+                            BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+                            new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
+                            new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
+                            true, UniformInt.of(3, 8),
+                            UniformInt.of(2, 6), UniformInt.of(1, 2),
+                            -18, 18, 0.075D, 1)));
 
     public static void register(IEventBus eventBus){
         CONFIGURED_FEATURES.register(eventBus);

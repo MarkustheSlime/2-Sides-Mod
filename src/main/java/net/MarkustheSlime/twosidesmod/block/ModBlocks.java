@@ -5,12 +5,17 @@ import net.MarkustheSlime.twosidesmod.block.custom.*;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.ModCreativeModeTab;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
+import net.MarkustheSlime.twosidesmod.world.tree.SunSapPineTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -133,6 +138,61 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_DM_ESSENCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<Block> SUN_SAP_PINE_LOG = registerBlock("sun_sap_pine_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> SUN_SAP_PINE_WOOD = registerBlock("sun_sap_pine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_LOG = registerBlock("stripped_sun_sap_pine_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_WOOD = registerBlock("stripped_sun_sap_pine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> SUN_SAP_PINE_PLANKS = registerBlock("sun_sap_pine_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+                    .requiresCorrectToolForDrops()) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> SUN_SAP_PINE_LEAVES = registerBlock("sun_sap_pine_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+                    .requiresCorrectToolForDrops()){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            }, ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> SUN_SAP_PINE_SAPLING = registerBlock("sun_sap_pine_sapling",
+            () -> new SaplingBlock(new SunSapPineTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.TWO_SIDES_TAB);
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
