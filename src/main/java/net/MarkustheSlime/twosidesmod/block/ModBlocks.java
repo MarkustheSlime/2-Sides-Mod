@@ -136,8 +136,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
+    //Liquid Start
     public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_DM_ESSENCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    //Liquid End
 
     public static final RegistryObject<Block> SUN_SAP_PINE_LOG = registerBlock("sun_sap_pine_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)

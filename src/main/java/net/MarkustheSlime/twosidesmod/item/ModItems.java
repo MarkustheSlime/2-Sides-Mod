@@ -49,9 +49,11 @@ public class ModItems {
     public static final RegistryObject<Item> TESTADVANCEDITEM = ITEMS.register("testadvanceditem",
             () -> new TESTADVANCEDITEM(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
 
+    //Liquid Start
     public static final RegistryObject<Item> DM_ESSENCE_BUCKET = ITEMS.register("dm_essence_bucket",
             () -> new BucketItem(ModFluids.SOURCE_DM_ESSENCE,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+    //Liquid End
 
     public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
             () -> new PickaxeItem(ModToolTiers.DwarvenMagic, 8, 3f,

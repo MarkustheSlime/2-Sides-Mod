@@ -54,8 +54,10 @@ public class TwoSidesMod
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        //Liquid Start
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+        //Liquid End
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -84,8 +86,10 @@ public class TwoSidesMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            //Liquid Start
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DM_ESSENCE.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DM_ESSENCE.get(), RenderType.translucent());
+            //Liquid End
 
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
 
