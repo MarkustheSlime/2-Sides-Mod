@@ -97,7 +97,7 @@ public class ModConfiguredFeatures {
                             new StraightTrunkPlacer(5, 6, 3),
                             BlockStateProvider.simple(ModBlocks.SUN_SAP_PINE_LEAVES.get()),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                            new TwoLayersFeatureSize(1, 0, 2)).build()));
+                            new TwoLayersFeatureSize(2, 0, 3)).build()));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SUN_SAP_PINE_SPAWN =
             CONFIGURED_FEATURES.register("sun_sap_pine_spawn", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
@@ -108,10 +108,10 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> DM_GEODE = CONFIGURED_FEATURES.register("dm_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE,
                     new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                            BlockStateProvider.simple(Blocks.DEEPSLATE),
+                            BlockStateProvider.simple(ModBlocks.DEEPSLATE_DM_ORE.get()),
                             BlockStateProvider.simple(ModBlocks.DM_ORE.get()),
-                            BlockStateProvider.simple(Blocks.DIRT),
-                            BlockStateProvider.simple(Blocks.DIAMOND_BLOCK),
+                            BlockStateProvider.simple(Blocks.COBBLED_DEEPSLATE),
+                            BlockStateProvider.simple(Blocks.DEEPSLATE),
                             List.of(ModBlocks.DM_BLOCK.get().defaultBlockState()),
                             BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
                             new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
