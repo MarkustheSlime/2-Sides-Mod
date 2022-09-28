@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "twosidesmod:block/rainbow_flower"
+  },
+  "render_type": "cutout"
+}

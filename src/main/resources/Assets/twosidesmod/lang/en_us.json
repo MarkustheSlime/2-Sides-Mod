@@ -47,6 +47,9 @@
   "block.twosidesmod.stripped_sun_sap_pine_wood": "Stripped Sun Sap Pine Wood",
   "block.twosidesmod.sun_sap_pine_leaves": "Sun Sap Pine Leaves",
   "block.twosidesmod.sun_sap_pine_sapling": "Sun Sap Pine Sapling",
+  "block.twosidesmod.jasmine": "Prism Flora",
+  "block.twosidesmod.potted_jasmine": "Potted Prism Flora",
+  "block.twosidesmod.potted_sun_sap_pine_sapling": "Potted Sun Sap Pine Sapling",
 
   "itemGroup.twosidestab": "2 Sides",
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",

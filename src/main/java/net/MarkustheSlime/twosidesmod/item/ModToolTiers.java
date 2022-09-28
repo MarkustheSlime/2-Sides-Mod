@@ -16,7 +16,7 @@ public class ModToolTiers {
 
     static {
         DwarvenMagic = TierSortingRegistry.registerTier(
-                new ForgeTier(6, 2000, 9f, 3f, 24,
+                new ForgeTier(5, 2000, 9f, 3f, 24,
                         ModTags.Blocks.NEEDS_DM_TOOL, () -> Ingredient.of(ModItems.DM_Shard.get())),
                 new ResourceLocation(TwoSidesMod.MOD_ID, "dm_shard"), List.of(Tiers.NETHERITE), List.of());
     }

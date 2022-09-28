@@ -9,6 +9,7 @@ import net.MarkustheSlime.twosidesmod.world.tree.SunSapPineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -194,6 +195,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> SUN_SAP_PINE_SAPLING = registerBlock("sun_sap_pine_sapling",
             () -> new SaplingBlock(new SunSapPineTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> POTTED_SUN_SAP_PINE_SAPLING = BLOCKS.register("potted_sun_sap_pine_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.SUN_SAP_PINE_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> RainbowFlower = registerBlock("rainbow_flower",
+            () -> new FlowerBlock(MobEffects.GLOWING, 5,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)), ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> POTTED_RainbowFlower = BLOCKS.register("potted_rainbow_flower",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.RainbowFlower,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

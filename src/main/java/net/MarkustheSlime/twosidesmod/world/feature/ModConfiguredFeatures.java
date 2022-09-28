@@ -6,6 +6,7 @@ import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -16,10 +17,7 @@ import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -105,12 +103,17 @@ public class ModConfiguredFeatures {
                             ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get(),
                             0.5F)), ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get())));
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> RainbowFlower = CONFIGURED_FEATURES.register("rainbow_flower",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.RainbowFlower.get()))))));
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> DM_GEODE = CONFIGURED_FEATURES.register("dm_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE,
                     new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                            BlockStateProvider.simple(ModBlocks.DEEPSLATE_DM_ORE.get()),
-                            BlockStateProvider.simple(ModBlocks.DM_ORE.get()),
                             BlockStateProvider.simple(Blocks.COBBLED_DEEPSLATE),
+                            BlockStateProvider.simple(ModBlocks.DM_ORE.get()),
+                            BlockStateProvider.simple(ModBlocks.DEEPSLATE_DM_ORE.get()),
                             BlockStateProvider.simple(Blocks.DEEPSLATE),
                             List.of(ModBlocks.DM_BLOCK.get().defaultBlockState()),
                             BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
