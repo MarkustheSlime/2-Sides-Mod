@@ -43,7 +43,7 @@ public class DeepGorgonEntity extends Monster implements IAnimatable {
         return Monster.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 100.0D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.ATTACK_SPEED, 0.5f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f).build();
     }
 
