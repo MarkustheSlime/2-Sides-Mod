@@ -16,6 +16,7 @@
   "item.twosidesmod.dwarven_pick": "Dwarven Magic Pickaxe",
   "item.twosidesmod.dm_golem_constructor": "Dwarven Magic Golem Constructor",
   "item.twosidesmod.deep_gorgon_spawn_egg": "Deep Gorgon Spawn Egg",
+  "item.twosidesmod.gorgon_serum": "Transmutation Serum",
 
   "block.twosidesmod.dm_block": "Dwarven Magic Block",
   "block.twosidesmod.dm_table": "Dwarven Magic Table",
@@ -39,7 +40,6 @@
   "block.twosidesmod.darkseeingblock": "Dark Seeing Block",
   "block.twosidesmod.dm_lamp": "Dwarven Magic Lamp",
   "block.twosidesmod.dm_wall": "Dwarven Magic Wall",
-  "fluid_type.twosidesmod.dm_essence_water_fluid": "Dwarven Magic Essence",
   "block.twosidesmod.sun_sap_pine_log": "Sun Sap Pine Log",
   "block.twosidesmod.sun_sap_pine_planks": "Sun Sap Pine Planks",
   "block.twosidesmod.sun_sap_pine_wood": "Sun Sap Pine Wood",
@@ -47,12 +47,16 @@
   "block.twosidesmod.stripped_sun_sap_pine_wood": "Stripped Sun Sap Pine Wood",
   "block.twosidesmod.sun_sap_pine_leaves": "Sun Sap Pine Leaves",
   "block.twosidesmod.sun_sap_pine_sapling": "Sun Sap Pine Sapling",
-  "block.twosidesmod.jasmine": "Prism Flora",
-  "block.twosidesmod.potted_jasmine": "Potted Prism Flora",
+  "block.twosidesmod.rainbow_flower": "Prism Flora",
+  "block.twosidesmod.potted_rainbow_flower": "Potted Prism Flora",
   "block.twosidesmod.potted_sun_sap_pine_sapling": "Potted Sun Sap Pine Sapling",
+
+  "fluid_type.twosidesmod.dm_essence_water_fluid": "Dwarven Magic Essence",
 
   "itemGroup.twosidestab": "2 Sides",
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",
+  "entity.twosidesmod.dm_golem": "Dwarven Magic Golem",
+  "entity.twosidesmod.deep_gorgon": "Deep Gorgon",
 
   "key.category.twosidesmod.twosides": "2 Sides Mod",
   "key.twosidesmod.tk1": "TK1",

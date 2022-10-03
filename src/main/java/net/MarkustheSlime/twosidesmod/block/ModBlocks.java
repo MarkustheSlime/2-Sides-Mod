@@ -2,8 +2,9 @@ package net.MarkustheSlime.twosidesmod.block;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.custom.*;
+import net.MarkustheSlime.twosidesmod.ModCreativeModeTab;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
-import net.MarkustheSlime.twosidesmod.item.ModCreativeModeTab;
+import net.MarkustheSlime.twosidesmod.fluid.SunSap;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.world.tree.SunSapPineTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -133,13 +134,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> DM_Lamp = registerBlock("dm_lamp",
             () -> new DM_Lamp_Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()
-                    .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 0 : 15)), ModCreativeModeTab.TWO_SIDES_TAB);
+                    .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 0 : 15)),
+            ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     //Liquid Start
-    public static final RegistryObject<LiquidBlock> DM_ESSENCE_BLOCK = BLOCKS.register("dm_essence_water_block",
-            () -> new LiquidBlock(ModFluids.SOURCE_DM_ESSENCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final RegistryObject<LiquidBlock> DME_BLOCK = BLOCKS.register("dme_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_DME, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final RegistryObject<LiquidBlock> SSAP_BLOCK = BLOCKS.register("sun_sap_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SSAP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final RegistryObject<LiquidBlock> MSAP_BLOCK = BLOCKS.register("moon_syrup_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_MSAP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> GS_BLOCK = BLOCKS.register("gorgon_serum_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_GS, BlockBehaviour.Properties.copy(Blocks.WATER)));
     //Liquid End
 
     public static final RegistryObject<Block> SUN_SAP_PINE_LOG = registerBlock("sun_sap_pine_log",
@@ -148,10 +157,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> SUN_SAP_PINE_WOOD = registerBlock("sun_sap_pine_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_LOG = registerBlock("stripped_sun_sap_pine_log",
+    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_LOG =
+            registerBlock("stripped_sun_sap_pine_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_WOOD = registerBlock("stripped_sun_sap_pine_wood",
+    public static final RegistryObject<Block> STRIPPED_SUN_SAP_PINE_WOOD =
+            registerBlock("stripped_sun_sap_pine_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
 
@@ -196,9 +207,9 @@ public class ModBlocks {
             () -> new SaplingBlock(new SunSapPineTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.TWO_SIDES_TAB);
 
-    public static final RegistryObject<Block> POTTED_SUN_SAP_PINE_SAPLING = BLOCKS.register("potted_sun_sap_pine_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.SUN_SAP_PINE_SAPLING,
-                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_SUN_SAP_PINE_SAPLING = BLOCKS.register
+            ("potted_sun_sap_pine_sapling", () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT),
+                    ModBlocks.SUN_SAP_PINE_SAPLING, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> RainbowFlower = registerBlock("rainbow_flower",
             () -> new FlowerBlock(MobEffects.GLOWING, 5,
@@ -208,8 +219,14 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.RainbowFlower,
                     BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
+    public static final RegistryObject<Block> EXTRACTOR = registerBlock("sap_extractor",
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(0f)),
+            ModCreativeModeTab.TWO_SIDES_TAB);
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,
+                                                                     CreativeModeTab tab)
+    {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;

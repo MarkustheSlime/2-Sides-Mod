@@ -1,10 +1,11 @@
 package net.MarkustheSlime.twosidesmod.item;
 
+import net.MarkustheSlime.twosidesmod.ModCreativeModeTab;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
-import net.MarkustheSlime.twosidesmod.item.custom.TESTADVANCEDITEM;
+import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -49,12 +50,6 @@ public class ModItems {
     public static final RegistryObject<Item> TESTADVANCEDITEM = ITEMS.register("testadvanceditem",
             () -> new TESTADVANCEDITEM(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
 
-    //Liquid Start
-    public static final RegistryObject<Item> DM_ESSENCE_BUCKET = ITEMS.register("dm_essence_bucket",
-            () -> new BucketItem(ModFluids.SOURCE_DM_ESSENCE,
-                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
-    //Liquid End
-
     public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
             () -> new PickaxeItem(ModToolTiers.DwarvenMagic, 8, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
@@ -67,6 +62,26 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEEP_GORGON, 0x004f97, 0x00FF1F,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
 
+    public static final RegistryObject<Item> TRANSMUTATION_SERUM = ITEMS.register("gorgon_serum",
+            () -> new BucketItem(ModFluids.SOURCE_GS, new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)
+                    .craftRemainder(Items.BUCKET).stacksTo(16)));
+
+
+    //Liquid Start
+    public static final RegistryObject<Item> DME_BUCKET = ITEMS.register("dm_essence_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_DME,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+    //Liquid End
+    public static final RegistryObject<Item> SUN_SAP = ITEMS.register("sun_sap",
+            () -> new BucketItem(ModFluids.SOURCE_SSAP,
+    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1)));
+
+    public static final RegistryObject<Item> MOON_SYRUP = ITEMS.register("moon_syrup",
+            () -> new BucketItem(ModFluids.SOURCE_MSAP,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1)));
+
+
+    //tip: don't use gecko lib for items/blocks unless they have to be animated
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

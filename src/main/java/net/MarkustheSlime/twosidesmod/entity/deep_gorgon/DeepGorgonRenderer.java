@@ -13,7 +13,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class DeepGorgonRenderer extends GeoEntityRenderer<DeepGorgonEntity> {
     public DeepGorgonRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new DeepGorgonModel());
-        this.shadowRadius = 0.9f;
+        this.shadowRadius = 2.5f;
     }
 
     @Override

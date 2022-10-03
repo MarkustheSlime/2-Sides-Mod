@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.item.custom;
+package net.MarkustheSlime.twosidesmod.item.custom.tutorial;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

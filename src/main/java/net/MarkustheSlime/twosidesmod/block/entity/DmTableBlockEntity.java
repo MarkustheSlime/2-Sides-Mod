@@ -80,7 +80,7 @@ public class DmTableBlockEntity extends BlockEntity implements MenuProvider {
 
         @Override
         public boolean isFluidValid(FluidStack stack) {
-            return stack.getFluid() == Fluids.WATER || stack.getFluid() == ModFluids.SOURCE_DM_ESSENCE.get();
+            return stack.getFluid() == Fluids.WATER || stack.getFluid() == ModFluids.SOURCE_DME.get();
         }
     };
 

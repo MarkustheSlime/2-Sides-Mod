@@ -6,8 +6,7 @@ import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.entity.deep_gorgon.DeepGorgonRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dm_golem.DmGolemRenderer;
-import net.MarkustheSlime.twosidesmod.fluid.ModFluidTypes;
-import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
+import net.MarkustheSlime.twosidesmod.fluid.*;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.recipe.ModRecipes;
@@ -15,8 +14,6 @@ import net.MarkustheSlime.twosidesmod.screen.DmTableScreen;
 import net.MarkustheSlime.twosidesmod.screen.ModMenuTypes;
 import net.MarkustheSlime.twosidesmod.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -60,8 +57,11 @@ public class TwoSidesMod
         ModPlacedFeatures.register(modEventBus);
 
         //Liquid Start
+        SunSap.register(modEventBus);
+        DME.register(modEventBus);
+        MoonSyrup.register(modEventBus);
+        GorgonSerumFluid.register(modEventBus);
         ModFluids.register(modEventBus);
-        ModFluidTypes.register(modEventBus);
         //Liquid End
 
         ModBlockEntities.register(modEventBus);
@@ -99,8 +99,11 @@ public class TwoSidesMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             //Liquid Start
-            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DM_ESSENCE.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DM_ESSENCE.get(), RenderType.translucent());
+
+
+
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DM_ESSENCE.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DM_ESSENCE.get(), RenderType.translucent());
             //Liquid End
 
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
