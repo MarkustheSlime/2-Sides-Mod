@@ -10,6 +10,12 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_DM_TOOL
                 = tag("needs_dm_tool");
+        public static final TagKey<Block> NEEDS_SUN_TOOL
+                = tag("needs_sun_tool");
+
+        public static final TagKey<Block> NEEDS_MOON_TOOL
+                = tag("needs_moon_tool");
+
 
 
         private static TagKey<Block> tag(String name) {

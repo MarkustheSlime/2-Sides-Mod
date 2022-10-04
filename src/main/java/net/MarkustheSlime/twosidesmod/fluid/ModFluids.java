@@ -55,7 +55,7 @@ public class ModFluids {
 
 
     public static final ForgeFlowingFluid.Properties GS_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
-            MoonSyrup.MSAP_FLUID_TYPE, SOURCE_MSAP, FLOWING_GS)
+            GorgonSerumFluid.GS_FLUID_TYPE, SOURCE_GS, FLOWING_GS)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.GS_BLOCK)
             .bucket(ModItems.TRANSMUTATION_SERUM);
 

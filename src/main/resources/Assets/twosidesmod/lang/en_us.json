@@ -17,6 +17,8 @@
   "item.twosidesmod.dm_golem_constructor": "Dwarven Magic Golem Constructor",
   "item.twosidesmod.deep_gorgon_spawn_egg": "Deep Gorgon Spawn Egg",
   "item.twosidesmod.gorgon_serum": "Transmutation Serum",
+  "item.twosidesmod.sun_sap": "Sun Sap",
+  "item.twosidesmod.moon_syrup": "Moon Syrup",
 
   "block.twosidesmod.dm_block": "Dwarven Magic Block",
   "block.twosidesmod.dm_table": "Dwarven Magic Table",
@@ -51,7 +53,10 @@
   "block.twosidesmod.potted_rainbow_flower": "Potted Prism Flora",
   "block.twosidesmod.potted_sun_sap_pine_sapling": "Potted Sun Sap Pine Sapling",
 
-  "fluid_type.twosidesmod.dm_essence_water_fluid": "Dwarven Magic Essence",
+  "fluid_type.twosidesmod.dme_fluid": "Dwarven Magic Essence",
+  "fluid_type.twosidesmod.sun_sap_fluid": "Sun Sap",
+  "fluid_type.twosidesmod.moon_syrup_fluid": "Moon Syrup",
+  "fluid_type.twosidesmod.gorgon_serum_fluid": "Transmuation Serum",
 
   "itemGroup.twosidestab": "2 Sides",
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",

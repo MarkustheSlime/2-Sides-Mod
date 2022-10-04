@@ -6,6 +6,7 @@ import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
+import net.MarkustheSlime.twosidesmod.util.ModToolTiers;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -80,6 +81,11 @@ public class ModItems {
             () -> new BucketItem(ModFluids.SOURCE_MSAP,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1)));
 
+    public static final RegistryObject<Item> SUN_WOOD_STICK = ITEMS.register("sun_wood_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+
+    public static final RegistryObject<Item> MOON_STONE_STICK = ITEMS.register("moon_stone_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
 
     //tip: don't use gecko lib for items/blocks unless they have to be animated
     public static void register(IEventBus eventBus) {
