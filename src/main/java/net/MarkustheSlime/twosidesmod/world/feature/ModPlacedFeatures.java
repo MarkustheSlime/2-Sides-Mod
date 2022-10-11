@@ -60,6 +60,14 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.SUN_SAP_PINE_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
                     PlacementUtils.countExtra(3, 0.1f, 2))));
 
+    public static final RegistryObject<PlacedFeature> MOON_SYRUP_FLOWER_CHECKED = PLACED_FEATURES.register("moon_syrup_flower_checked",
+            () -> new PlacedFeature(ModConfiguredFeatures.MOON_SYRUP_FLOWER.getHolder().get(),
+                    List.of(PlacementUtils.filteredByBlockSurvival(ModBlocks.MOON_SYRUP_FLOWER_SPRIG.get()))));
+
+    public static final RegistryObject<PlacedFeature> MOON_SYRUP_FLOWER_PLACED = PLACED_FEATURES.register("moon_syrup_flower_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.MOON_SYRUP_FLOWER_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(1, 0.1f, 2))));
+
     public static final RegistryObject<PlacedFeature> DM_GEODE_PLACED = PLACED_FEATURES.register("dm_geode_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.DM_GEODE.getHolder().get(), List.of(
                     RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),

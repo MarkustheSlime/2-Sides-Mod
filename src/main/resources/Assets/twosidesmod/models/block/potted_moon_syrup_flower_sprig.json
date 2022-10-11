@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "twosidesmod:block/moon_syrup_flower_sprig"
+  },
+  "render_type": "cutout"
+}

@@ -18,6 +18,11 @@
     "twosidesmod:deepslate_primal_ore",
     "twosidesmod:deepslate_vitality_ore",
     "twosidesmod:dm_lamp",
-    "twosidesmod:meteorite"
+    "twosidesmod:meteorite",
+    "twosidesmod:moon_syrup_flower_log",
+    "twosidesmod:moon_syrup_flower_wood",
+    "twosidesmod:stripped_moon_syrup_flower_log",
+    "twosidesmod:stripped_moon_syrup_flower_wood",
+    "twosidesmod:crystal_spire"
   ]
 }

@@ -1,0 +1,23 @@
+10/4/22: Current Priority
+-Finish setting up MoonStone Flowers - WIP
+-Create, model, and texture MoonStone and SunWood items - WIP
+   -Sun Wood Pickaxe - WIP
+   -Sun Wood Sword - X
+   -Sun Wood Armor - X
+   -Sun Wood Axe - X
+   -Moon Stone Armor - X
+   -Moon Stone Sword - X
+   -Moon Stone Scythe - X
+-Start on SunSap Sundial and MoonStone Sanctum structures - X
+    -create biome for SunWood and Moonstone - X
+-Create table for turning Transmutation Serum into SunSap and MoonSyrup - X
+-Figure out how to do multiple inputs for Crystalizing Table - X
+-Add recipes for geode chunks - X
+    -create, model, animate, and texture them - X
+-Add recipes for geode blocks - X
+    -Crafting makes spawn egg for monster, which drops block - X
+    -create, model, animate, and texture monster - X
+
+Least Priority:
+-Create abilities - X
+-Create vehicles - X

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "twosidesmod:block/moon_syrup_flower_petals"
+  },
+  "render_type": "cutout"
+}

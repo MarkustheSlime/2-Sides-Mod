@@ -33,6 +33,8 @@ import org.slf4j.Logger;
 import net.MarkustheSlime.twosidesmod.painting.ModPaintings;
 import net.MarkustheSlime.twosidesmod.world.feature.ModConfiguredFeatures;
 import net.MarkustheSlime.twosidesmod.world.feature.ModPlacedFeatures;
+import software.bernie.example.GeckoLibMod;
+import software.bernie.example.registry.BlockRegistry;
 import software.bernie.geckolib3.GeckoLib;
 
 
@@ -87,6 +89,7 @@ public class TwoSidesMod
                     Monster::checkMonsterSpawnRules);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SUN_SAP_PINE_SAPLING.getId(), ModBlocks.POTTED_SUN_SAP_PINE_SAPLING);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOON_SYRUP_FLOWER_SPRIG.getId(), ModBlocks.POTTED_MOON_SYRUP_FLOWER_SPRIG);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.RainbowFlower.getId(), ModBlocks.POTTED_RainbowFlower);
 
             ModMessages.register();
@@ -108,8 +111,8 @@ public class TwoSidesMod
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DME.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_GS.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_GS.get(), RenderType.translucent());
-            //Liquid End
 
+            //Liquid End
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
 
             EntityRenderers.register(ModEntityTypes.DM_GOLEM.get(), DmGolemRenderer::new);

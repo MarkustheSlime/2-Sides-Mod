@@ -4,6 +4,10 @@
     "twosidesmod:sun_sap_pine_log",
     "twosidesmod:sun_sap_pine_wood",
     "twosidesmod:stripped_sun_sap_pine_log",
-    "twosidesmod:stripped_sun_sap_pine_wood"
+    "twosidesmod:stripped_sun_sap_pine_wood",
+    "twosidesmod:moon_syrup_flower_log",
+    "twosidesmod:moon_syrup_flower_wood",
+    "twosidesmod:stripped_moon_syrup_flower_log",
+    "twosidesmod:stripped_moon_syrup_flower_wood"
   ]
 }

@@ -6,6 +6,7 @@ import net.MarkustheSlime.twosidesmod.ModCreativeModeTab;
 import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.fluid.SunSap;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
+import net.MarkustheSlime.twosidesmod.world.tree.MoonSyrupFlowerTreeGrower;
 import net.MarkustheSlime.twosidesmod.world.tree.SunSapPineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +27,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -136,6 +139,13 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(DM_Lamp_Block.LIT) ? 0 : 15)),
             ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> MoonStoneBud = registerBlock("moon_stone_bud",
+            () -> new DM_Lamp_Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()
+                    .lightLevel(litBlockEmission(10))),
+            ModCreativeModeTab.TWO_SIDES_TAB);
+
     public static final RegistryObject<Block> GLOBSQUACH_CROP = BLOCKS.register("globsquach_crop",
             () -> new GlobsquachCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
@@ -166,6 +176,21 @@ public class ModBlocks {
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
 
+    public static final RegistryObject<Block> MOON_SYRUP_FLOWER_LOG = registerBlock("moon_syrup_flower_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> MOON_SYRUP_FLOWER_WOOD = registerBlock("moon_syrup_flower_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> STRIPPED_MOON_SYRUP_FLOWER_LOG =
+            registerBlock("stripped_moon_syrup_flower_log",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                            .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> STRIPPED_MOON_SYRUP_FLOWER_WOOD =
+            registerBlock("stripped_moon_syrup_flower_wood",
+                    () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+                            .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
+
     public static final RegistryObject<Block> SUN_SAP_PINE_PLANKS = registerBlock("sun_sap_pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
                     .requiresCorrectToolForDrops()) {
@@ -182,6 +207,25 @@ public class ModBlocks {
                 @Override
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 20;
+                }
+            }, ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> MOON_SYRUP_FLOWER_PLANKS = registerBlock("moon_syrup_flower_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+                    .requiresCorrectToolForDrops()) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return false;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 0;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 0;
                 }
             }, ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> SUN_SAP_PINE_LEAVES = registerBlock("sun_sap_pine_leaves",
@@ -203,13 +247,40 @@ public class ModBlocks {
                 }
             }, ModCreativeModeTab.TWO_SIDES_TAB);
 
+    public static final RegistryObject<Block> MOON_SYRUP_FLOWER_PETAL = registerBlock("moon_syrup_flower_petals",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+                    .requiresCorrectToolForDrops()){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 15;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            }, ModCreativeModeTab.TWO_SIDES_TAB);
+
     public static final RegistryObject<Block> SUN_SAP_PINE_SAPLING = registerBlock("sun_sap_pine_sapling",
             () -> new SaplingBlock(new SunSapPineTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.TWO_SIDES_TAB);
+
+    public static final RegistryObject<Block> MOON_SYRUP_FLOWER_SPRIG = registerBlock("moon_syrup_flower_sprig",
+            () -> new SaplingBlock(new MoonSyrupFlowerTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.TWO_SIDES_TAB);
 
     public static final RegistryObject<Block> POTTED_SUN_SAP_PINE_SAPLING = BLOCKS.register
             ("potted_sun_sap_pine_sapling", () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT),
                     ModBlocks.SUN_SAP_PINE_SAPLING, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> POTTED_MOON_SYRUP_FLOWER_SPRIG = BLOCKS.register
+            ("potted_moon_syrup_flower_sprig", () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT),
+                    ModBlocks.MOON_SYRUP_FLOWER_SPRIG, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> RainbowFlower = registerBlock("rainbow_flower",
             () -> new FlowerBlock(MobEffects.GLOWING, 5,
@@ -219,10 +290,23 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.RainbowFlower,
                     BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
-    public static final RegistryObject<Block> EXTRACTOR = registerBlock("sap_extractor",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(0f)),
-            ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> CRYSTAL_SPIRE = registerBlock("crystal_spire",
+            () -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TWO_SIDES_TAB);
 
+    //add the wooden blocks
+    public static final RegistryObject<Block> SUN_WOOD_STAIRS = registerBlock("sun_wood_stairs",
+            () -> new StairBlock(SUN_SAP_PINE_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.TWO_SIDES_TAB);
+    public static final RegistryObject<Block> MOON_STONE_STAIRS = registerBlock("moon_stone_stairs",
+            () -> new StairBlock(MOON_SYRUP_FLOWER_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.TWO_SIDES_TAB);
+
+    private static ToIntFunction<BlockState> litBlockEmission(int pLightValue) {
+        return (p_50763_) -> {
+            return p_50763_.getValue(BlockStateProperties.LIT) ? pLightValue : 0;
+        };
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,
                                                                      CreativeModeTab tab)

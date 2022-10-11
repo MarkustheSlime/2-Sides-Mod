@@ -42,9 +42,7 @@ import org.jetbrains.annotations.Nullable;
                 if(state.is(ModBlocks.SUN_SAP_PINE_WOOD.get())) {
                     return ModBlocks.STRIPPED_SUN_SAP_PINE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
                 }
-            }
 
-            /*if(context.getItemInHand().getItem() instanceof PickaxeItem) {
                 if(state.is(ModBlocks.MOON_SYRUP_FLOWER_LOG.get())) {
                     return ModBlocks.STRIPPED_MOON_SYRUP_FLOWER_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
                 }
@@ -52,7 +50,7 @@ import org.jetbrains.annotations.Nullable;
                 if(state.is(ModBlocks.MOON_SYRUP_FLOWER_WOOD.get())) {
                     return ModBlocks.STRIPPED_MOON_SYRUP_FLOWER_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
                 }
-            }*/
+            }
 
             return super.getToolModifiedState(state, context, toolAction, simulate);
         }

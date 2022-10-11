@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "twosidesmod:moonstone_great_bloom",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1642136474,
+
+    "spacing": 40,
+
+    "separation": 30,
+
+    "type": "minecraft:random_spread"
+  }
+}

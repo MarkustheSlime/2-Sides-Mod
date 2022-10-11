@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "twosidesmod:sun_sap_pine_planks"
+    },
+    "/": {
+      "item": "twosidesmod:sun_wood_stick"
+    }
+  },
+  "result": {
+    "item": "twosidesmod:sun_wood_pickaxe"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "twosidesmod:block/moon_syrup_flower_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "twosidesmod:block/moon_syrup_flower_log"
+    },
+    "axis=z": {
+      "model": "twosidesmod:block/moon_syrup_flower_log_horizontal",
+      "x": 90
+    }
+  }
+}

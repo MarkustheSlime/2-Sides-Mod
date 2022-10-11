@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "twosidesmod:small_spire",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "salt": 6240819028,
+
+    "spacing": 12,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}

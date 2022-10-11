@@ -55,6 +55,11 @@ public class ModItems {
             () -> new PickaxeItem(ModToolTiers.DwarvenMagic, 8, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
 
+    public static final RegistryObject<Item> SUN_WOOD_PICKAXE = ITEMS.register("sun_wood_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.SunWood, 9, -2f,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
+
+
     public static final RegistryObject<Item> DM_GOLEM_SPAWNER = ITEMS.register("dm_golem_constructor",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DM_GOLEM, 0x55FFFF, 0x2DD7D7,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
@@ -66,7 +71,6 @@ public class ModItems {
     public static final RegistryObject<Item> TRANSMUTATION_SERUM = ITEMS.register("gorgon_serum",
             () -> new BucketItem(ModFluids.SOURCE_GS, new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)
                     .craftRemainder(Items.BUCKET).stacksTo(16)));
-
 
     //Liquid Start
     public static final RegistryObject<Item> DME_BUCKET = ITEMS.register("dm_essence_bucket",

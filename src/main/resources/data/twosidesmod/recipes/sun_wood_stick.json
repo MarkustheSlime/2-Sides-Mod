@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sticks",
+  "key": {
+    "#": {
+      "tag": "twosidesmod:sun_sap_pine_planks"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "twosidesmod:sun_wood_stick"
+  }
+}

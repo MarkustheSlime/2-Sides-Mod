@@ -92,9 +92,9 @@ public class ModConfiguredFeatures {
             CONFIGURED_FEATURES.register("sun_sap_pine", () ->
                     new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                             BlockStateProvider.simple(ModBlocks.SUN_SAP_PINE_LOG.get()),
-                            new StraightTrunkPlacer(5, 6, 3),
+                            new StraightTrunkPlacer(2, 3, 1),
                             BlockStateProvider.simple(ModBlocks.SUN_SAP_PINE_LEAVES.get()),
-                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                            new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                             new TwoLayersFeatureSize(2, 0, 3)).build()));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SUN_SAP_PINE_SPAWN =
@@ -102,6 +102,21 @@ public class ModConfiguredFeatures {
                     new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(
                             ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get(),
                             0.5F)), ModPlacedFeatures.SUN_SAP_PINE_CHECKED.getHolder().get())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MOON_SYRUP_FLOWER =
+            CONFIGURED_FEATURES.register("moon_syrup_flower", () ->
+                    new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                            BlockStateProvider.simple(ModBlocks.MOON_SYRUP_FLOWER_LOG.get()),
+                            new StraightTrunkPlacer(2, 3, 1),
+                            BlockStateProvider.simple(ModBlocks.MOON_SYRUP_FLOWER_PETAL.get()),
+                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                            new TwoLayersFeatureSize(2, 0, 3)).build()));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MOON_SYRUP_FLOWER_SPAWN =
+            CONFIGURED_FEATURES.register("moon_syrup_flower_spawn", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(
+                            ModPlacedFeatures.MOON_SYRUP_FLOWER_CHECKED.getHolder().get(),
+                            0.5F)), ModPlacedFeatures.MOON_SYRUP_FLOWER_CHECKED.getHolder().get())));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> RainbowFlower = CONFIGURED_FEATURES.register("rainbow_flower",
             () -> new ConfiguredFeature<>(Feature.FLOWER,

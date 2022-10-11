@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sticks",
+  "key": {
+    "#": {
+      "tag": "twosidesmod:moon_syrup_flower_planks"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "twosidesmod:moon_stone_stick"
+  }
+}
