@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "twosidesmod:block/moon_syrup_flower_planks"
+  }
+}

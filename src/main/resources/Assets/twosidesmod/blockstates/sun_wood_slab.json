@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "twosidesmod:block/sun_wood_slab"
+    },
+    "type=double": {
+      "model": "twosidesmod:block/sun_wood_planks"
+    },
+    "type=top": {
+      "model": "twosidesmod:block/sun_wood_slab_top"
+    }
+  }
+}
