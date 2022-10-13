@@ -1,3 +1,5 @@
 {
-  "parent": "twosidesmod:block/moon_stone_sign"
+  "textures": {
+    "particle": "twosidesmod:block/moon_syrup_flower_planks"
+  }
 }

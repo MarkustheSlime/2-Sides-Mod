@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+  "bottom": "twosidesmod:block/sun_wood_door_bottom",
+  "top": "twosidesmod:block/sun_wood_door_top"
+  }
+}

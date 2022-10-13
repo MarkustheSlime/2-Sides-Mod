@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "twosidesmod:block/sun_sap_pine_planks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "twosidesmod:block/sun_sap_pine_planks"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/pressure_plate_up",
   "textures": {
-    "texture": "twosidesmod:block/moon_syrup_flower_planks"
+    "texture": "twosidesmod:block/sun_sap_pine_planks"
   }
 }
