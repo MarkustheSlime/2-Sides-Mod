@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:wooden_pressure_plates",
+    "twosidesmod:moon_stone_pressure_plate"
+  ]
+}

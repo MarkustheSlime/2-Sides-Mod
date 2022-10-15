@@ -103,16 +103,11 @@ public class TwoSidesMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            //Liquid Start
-
-
-
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DME.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DME.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_GS.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_GS.get(), RenderType.translucent());
 
-            //Liquid End
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
 
             EntityRenderers.register(ModEntityTypes.DM_GOLEM.get(), DmGolemRenderer::new);

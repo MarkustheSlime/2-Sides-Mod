@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:wooden_buttons",
+    "twosidesmod:moon_stone_button"
+  ]
+}

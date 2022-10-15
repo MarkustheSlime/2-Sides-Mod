@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "twosidesmod:item/moon_stone_sign"
+    "layer0": "twosidesmod:item/sun_wood_door"
   }
 }

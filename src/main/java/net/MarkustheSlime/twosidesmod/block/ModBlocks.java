@@ -309,13 +309,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> SUN_WOOD_TRAPDOOR = registerBlock("sun_wood_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).strength(6f)
                     .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> SUN_WOOD_SIGN = registerBlock("sun_wood_sign",
-            () -> new StandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(6F)
-                    .requiresCorrectToolForDrops(), WoodType.OAK), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block>SUN_WOOD_WALL_SIGN = registerBlock("sun_wood_wall_sign",
-            () -> new WallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F)
-                    .dropsLike(SUN_WOOD_SIGN.get()).requiresCorrectToolForDrops(), WoodType.OAK),
-            ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> SUN_WOOD_FENCE = registerBlock("sun_wood_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, SUN_SAP_PINE_PLANKS.get()
                     .defaultMaterialColor()).strength(2.0F, 3.0F)
@@ -338,19 +331,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOON_STONE_SLAB = registerBlock("moon_stone_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> MOON_STONE_DOOR = registerBlock("moon_stone_door",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)), ModCreativeModeTab.TWO_SIDES_TAB);
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)), ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> MOON_STONE_TRAPDOOR = registerBlock("moon_stone_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)),
             ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> MOON_STONE_SIGN = registerBlock("moon_stone_sign",
-            () -> new StandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(6F)
-                    .requiresCorrectToolForDrops(), WoodType.OAK), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> MOON_STONE_WALL_SIGN = registerBlock("moon_stone_wall_sign",
-            () -> new WallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F)
-                    .dropsLike(MOON_STONE_SIGN.get()), WoodType.OAK), ModCreativeModeTab.TWO_SIDES_TAB);
-    public static final RegistryObject<Block> MOON_STONE_LADDER = registerBlock("moon_stone_ladder",
-            () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER).requiresCorrectToolForDrops()
-                    .strength(6F).noOcclusion()), ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> MOON_STONE_FENCE = registerBlock("moon_stone_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, MOON_SYRUP_FLOWER_PLANKS.get()
                             .defaultMaterialColor()).requiresCorrectToolForDrops()
@@ -360,7 +344,7 @@ public class ModBlocks {
                             .defaultMaterialColor()).strength(2.0F, 3.0F)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> MOON_STONE_BUTTON = registerBlock("moon_stone_button", () ->
-            new StoneButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).strength(6f)
+            new StoneButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).strength(6f)
                     .requiresCorrectToolForDrops().requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_TAB);
     public static final RegistryObject<Block> MOON_STONE_PRESSURE_PLATE = registerBlock("moon_stone_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of

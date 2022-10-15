@@ -4,7 +4,7 @@
       "model": "twosidesmod:block/moon_stone_slab"
     },
     "type=double": {
-      "model": "twosidesmod:block/moon_stone_planks"
+      "model": "twosidesmod:block/moon_syrup_flower_planks"
     },
     "type=top": {
       "model": "twosidesmod:block/moon_stone_slab_top"
