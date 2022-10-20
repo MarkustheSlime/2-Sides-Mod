@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.entity.dm_golem;
+package net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.minecraft.resources.ResourceLocation;

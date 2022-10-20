@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.entity.deep_gorgon;
+package net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -10,19 +10,19 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class DeepGorgonRenderer extends GeoEntityRenderer<DeepGorgonEntity> {
-    public DeepGorgonRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new DeepGorgonModel());
-        this.shadowRadius = 2.5f;
+public class DmGolemRenderer extends GeoEntityRenderer<DmGolemEntity> {
+    public DmGolemRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new DmGolemModel());
+        this.shadowRadius = 0.3f;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(DeepGorgonEntity instance) {
-        return new ResourceLocation(TwoSidesMod.MOD_ID, "textures/entity/deep_gorgon.png");
+    public ResourceLocation getTextureLocation(DmGolemEntity instance) {
+        return new ResourceLocation(TwoSidesMod.MOD_ID, "textures/entity/dm_golem.png");
     }
 
     @Override
-    public RenderType getRenderType(DeepGorgonEntity animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(DmGolemEntity animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource renderTypeBuffer,
                                     @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {

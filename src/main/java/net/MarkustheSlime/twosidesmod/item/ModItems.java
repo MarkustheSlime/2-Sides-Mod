@@ -19,12 +19,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TwoSidesMod.MOD_ID);
 
-
-    public static final RegistryObject<Item> D_Casing = ITEMS.register("d_casing",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
     public static final RegistryObject<Item> DM_Shard = ITEMS.register("dm_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
-
     public static final RegistryObject<Item> SOUL_Shard = ITEMS.register("soul_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
     public static final RegistryObject<Item> LIFE_Shard = ITEMS.register("life_shard",
@@ -41,6 +37,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
     public static final RegistryObject<Item> METEORITE_DEBRIS = ITEMS.register("meteorite_debris",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+
     public static final RegistryObject<Item> GLOBSQUACH = ITEMS.register("globsquach",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)
                     .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
@@ -54,7 +51,6 @@ public class ModItems {
     public static final RegistryObject<Item> DM_PICKAXE = ITEMS.register("dwarven_pick",
             () -> new PickaxeItem(ModToolTiers.DwarvenMagic, 8, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
-
     public static final RegistryObject<Item> SUN_WOOD_PICKAXE = ITEMS.register("sun_wood_pickaxe",
             () -> new PickaxeItem(ModToolTiers.SunWood, 9, -2f,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).stacksTo(1)));
@@ -63,33 +59,39 @@ public class ModItems {
     public static final RegistryObject<Item> DM_GOLEM_SPAWNER = ITEMS.register("dm_golem_constructor",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DM_GOLEM, 0x55FFFF, 0x2DD7D7,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
-
     public static final RegistryObject<Item> DEEP_GORGON_SPAWNER = ITEMS.register("deep_gorgon_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEEP_GORGON, 0x004f97, 0x00FF1F,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> SUN_FAIRY_SPAWNER = ITEMS.register("sun_fairy_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.SUN_FAIRY, 0x004f97, 0xBAAA00  ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> SUN_TROLL_SPAWNER = ITEMS.register("sun_troll_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.SUN_TROLL, 0x4c6603 , 0xeedb19   ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+
+    public static final RegistryObject<Item> D_Casing = ITEMS.register("d_casing",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> SUN_FAIRY_WING = ITEMS.register("sun_fairy_wing",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> TROLL_FAT = ITEMS.register("troll_fat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> SUN_WOOD_STICK = ITEMS.register("sun_wood_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
+    public static final RegistryObject<Item> MOON_STONE_STICK = ITEMS.register("moon_stone_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
 
     public static final RegistryObject<Item> TRANSMUTATION_SERUM = ITEMS.register("gorgon_serum",
             () -> new BucketItem(ModFluids.SOURCE_GS, new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)
                     .craftRemainder(Items.BUCKET).stacksTo(16)));
-
-    //Liquid Start
     public static final RegistryObject<Item> DME_BUCKET = ITEMS.register("dm_essence_bucket",
             () -> new BucketItem(ModFluids.SOURCE_DME,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
-    //Liquid End
     public static final RegistryObject<Item> SUN_SAP = ITEMS.register("sun_sap",
             () -> new BucketItem(ModFluids.SOURCE_SSAP,
     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1)));
-
     public static final RegistryObject<Item> MOON_SYRUP = ITEMS.register("moon_syrup",
             () -> new BucketItem(ModFluids.SOURCE_MSAP,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1)));
-
-    public static final RegistryObject<Item> SUN_WOOD_STICK = ITEMS.register("sun_wood_stick",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
-
-    public static final RegistryObject<Item> MOON_STONE_STICK = ITEMS.register("moon_stone_stick",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_TAB)));
 
     //tip: don't use gecko lib for items/blocks unless they have to be animated
     public static void register(IEventBus eventBus) {

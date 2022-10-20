@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.entity.deep_gorgon;
+package net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.minecraft.resources.ResourceLocation;

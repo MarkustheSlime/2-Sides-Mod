@@ -16,7 +16,6 @@
 -Add recipes for geode blocks - X
     -Crafting makes spawn egg for monster, which drops block - X
     -create, model, animate, and texture monster - X
--Make custom fluid buckets into bottles, make new bucket items for fluids
 
 Least Priority:
 -Create abilities - X

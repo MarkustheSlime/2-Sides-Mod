@@ -1,6 +1,7 @@
 package net.MarkustheSlime.twosidesmod.util;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
@@ -24,11 +25,11 @@ public class ModToolTiers {
                 new ResourceLocation(TwoSidesMod.MOD_ID, "dm_shard"), List.of(Tiers.NETHERITE), List.of());
         SunWood = TierSortingRegistry.registerTier(
                 new ForgeTier(6, 1500, 10f, 2f, 20,
-                        ModTags.Blocks.NEEDS_SUN_TOOL, () -> Ingredient.of(ModItems.SUN_WOOD_STICK.get())),
-                new ResourceLocation(TwoSidesMod.MOD_ID, "sun_wood_stick"), List.of(Tiers.NETHERITE), List.of());
+                        ModTags.Blocks.NEEDS_SUN_TOOL, () -> Ingredient.of(ModItems.SUN_SAP.get())),
+                new ResourceLocation(TwoSidesMod.MOD_ID, "sun_sap"), List.of(Tiers.NETHERITE), List.of());
         MoonStone = TierSortingRegistry.registerTier(
                 new ForgeTier(6, 1500, 10f, 2f, 20,
-                        ModTags.Blocks.NEEDS_MOON_TOOL, () -> Ingredient.of(ModItems.MOON_STONE_STICK.get())),
-                new ResourceLocation(TwoSidesMod.MOD_ID, "moon_stone_stick"), List.of(Tiers.NETHERITE), List.of());
+                        ModTags.Blocks.NEEDS_MOON_TOOL, () -> Ingredient.of(ModItems.MOON_SYRUP.get())),
+                new ResourceLocation(TwoSidesMod.MOD_ID, "moon_syrup"), List.of(Tiers.NETHERITE), List.of());
     }
 }

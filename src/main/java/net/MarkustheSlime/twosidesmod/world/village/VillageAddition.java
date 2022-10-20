@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //@Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID)
-public class VillageAddition {/*
+public class VillageAddition {
     private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create(
             Registry.PROCESSOR_LIST_REGISTRY, new ResourceLocation("minecraft", "empty"));
 
@@ -28,7 +28,7 @@ public class VillageAddition {/*
      *
      * Note: This is an additive operation which means multiple mods can do this and they stack with each other safely.
      */
-    /*private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry,
+    private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry,
                                           Registry<StructureProcessorList> processorListRegistry,
                                           ResourceLocation poolRL,
                                           String nbtPieceRL,
@@ -67,7 +67,7 @@ public class VillageAddition {/*
      * We use FMLServerAboutToStartEvent as the dynamic registry exists now and all JSON worldgen files were parsed.
      * Mod compat is best done here.
      */
-    /*@SubscribeEvent
+    @SubscribeEvent
     public static void addNewVillageBuilding(final ServerAboutToStartEvent event) {
         Registry<StructureTemplatePool> templatePoolRegistry = event.getServer().registryAccess().registry(Registry.TEMPLATE_POOL_REGISTRY).orElseThrow();
         Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess().registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
@@ -82,9 +82,9 @@ public class VillageAddition {/*
         //        new ResourceLocation("minecraft:village/snowy/houses"),
         //        "twosidesmod:plains_nighttime_guru", 250);
         //
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/savanna/houses"),
-        //        "twosidesmod:plains_nighttime_guru", 250);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+               new ResourceLocation("minecraft:village/savanna/houses"),
+                "twosidesmod:savanna_nighttime_guru", 250);
         //
         //addBuildingToPool(templatePoolRegistry, processorListRegistry,
         //        new ResourceLocation("minecraft:village/taiga/houses"),
@@ -93,5 +93,5 @@ public class VillageAddition {/*
         //addBuildingToPool(templatePoolRegistry, processorListRegistry,
         //        new ResourceLocation("minecraft:village/desert/houses"),
         //        "twosidesmod:plains_nighttime_guru", 250);
-    }*/
+    }
 }
