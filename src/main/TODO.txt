@@ -2,11 +2,12 @@
 -Replace TreeGrower for moonstone flowers for custom structures.
 -Create, model, and texture MoonStone and SunWood items - WIP
    -Sun Wood Pickaxe - DONE
-   -Sun Wood Sword - X
+   -Sun Wood Sword - DONE
    -Sun Wood Armor - X
    -Moon Stone Armor - X
-   -Moon Stone Sword - X
-   -Moon Stone Scythe - X
+   -Moon Stone Axe(sword item) - DONE
+   -Moon Stone Scythe - DONE
+
 -Start on SunSap Sundial and MoonStone Sanctum structures - WIP
     -create biome for SunWood and Moonstone - X
 -Create table for turning Transmutation Serum into SunSap and MoonSyrup - X

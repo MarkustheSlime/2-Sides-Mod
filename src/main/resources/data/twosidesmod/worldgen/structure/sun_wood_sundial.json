@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:jigsaw",
+  "start_pool": "twosidesmod:sun_wood_sundial/start_pool",
+  "size": 5,
+  "max_distance_from_center": 80,
+  "biomes": "#twosidesmod:has_structure/sun_wood_sundial",
+  "step": "surface_structures",
+  "start_height": {
+    "absolute": 0
+  },
+  "project_start_to_heightmap": "OCEAN_FLOOR_WG",
+  "use_expansion_hack": false
+}

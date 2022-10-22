@@ -1,0 +1,21 @@
+{
+  "name": "twosidesmod:moonstone_great_bloom/start_pool",
+
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+
+        "location": "twosidesmod:sun_wood_sundial",
+
+        "processors": "minecraft:empty",
+
+        "projection": "terrain_matching",
+
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -189,6 +189,9 @@
 					}
 				},
 				"LBody": {
+					"rotation": {
+						"vector": [50, 0, 0]
+					},
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -254,8 +257,11 @@
 					}
 				},
 				"LBody": {
+					"rotation": {
+						"vector": [50, 0, 0]
+					},
 					"position": {
-						"vector": [0, 2, 0]
+						"vector": [0, 0, 0]
 					}
 				},
 				"L1": {
@@ -435,6 +441,11 @@
 						"0.25": {
 							"vector": [0.73728, -0.67559, 0]
 						}
+					}
+				},
+				"LBody": {
+					"rotation": {
+						"vector": [52.5, 0, 0]
 					}
 				}
 			}

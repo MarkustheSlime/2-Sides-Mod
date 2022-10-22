@@ -14,18 +14,30 @@
                 "max": 2.0,
                 "min": 0.0
               },
-              "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 0.0
-              },
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "twosidesmod:troll_fat"
+          "name": "twosidesmod:dm_shard"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {"bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "twosidesmod:dwarven_bulb"
         }
       ],
       "rolls": 1.0

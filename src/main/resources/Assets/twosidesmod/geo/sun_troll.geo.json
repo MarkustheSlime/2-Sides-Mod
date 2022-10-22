@@ -432,7 +432,8 @@
 				{
 					"name": "LBody",
 					"parent": "Mob",
-					"pivot": [0, -14, 0]
+					"pivot": [0, 34, 2],
+					"rotation": [-50, 0, 0]
 				},
 				{
 					"name": "Legs",

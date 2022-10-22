@@ -5,6 +5,7 @@ import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
+import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_stone_angel.MoonStoneAngelEntity;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy.SunFairyEntity;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollEntity;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
@@ -121,6 +122,8 @@ public class ModEvents {
             event.put(ModEntityTypes.DEEP_GORGON.get(), DeepGorgonEntity.setAttributes());
             event.put(ModEntityTypes.SUN_FAIRY.get(), SunFairyEntity.setAttributes());
             event.put(ModEntityTypes.SUN_TROLL.get(), SunTrollEntity.setAttributes());
+            event.put(ModEntityTypes.MOON_FAIRY.get(), SunFairyEntity.setAttributes());
+            event.put(ModEntityTypes.MOON_STONE_ANGEL.get(), MoonStoneAngelEntity.setAttributes());
         }
 
     }
