@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.block.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.ModBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

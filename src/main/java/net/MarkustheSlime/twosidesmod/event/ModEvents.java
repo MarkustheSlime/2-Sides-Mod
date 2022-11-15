@@ -2,13 +2,13 @@ package net.MarkustheSlime.twosidesmod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_stone_angel.MoonStoneAngelEntity;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy.SunFairyEntity;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollEntity;
-import net.MarkustheSlime.twosidesmod.item.ModItems;
+import net.MarkustheSlime.twosidesmod.ModItems;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergyProvider;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
@@ -125,7 +125,6 @@ public class ModEvents {
             event.put(ModEntityTypes.MOON_FAIRY.get(), SunFairyEntity.setAttributes());
             event.put(ModEntityTypes.MOON_STONE_ANGEL.get(), MoonStoneAngelEntity.setAttributes());
         }
-
     }
 
     @SubscribeEvent

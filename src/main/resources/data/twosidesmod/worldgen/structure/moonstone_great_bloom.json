@@ -24,9 +24,9 @@
       "bounding_box": "piece",
       "spawns": [
         {
-          "type": "minecraft:frog",
+          "type": "twosidesmod:moon_fairy",
           "weight": 1,
-          "minCount": 1,
+          "minCount": 2,
           "maxCount": 3
         }
       ]

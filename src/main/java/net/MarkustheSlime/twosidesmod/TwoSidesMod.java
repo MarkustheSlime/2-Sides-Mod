@@ -1,9 +1,7 @@
 package net.MarkustheSlime.twosidesmod;
 
 import com.mojang.logging.LogUtils;
-import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
-import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemRenderer;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyRenderer;
@@ -11,11 +9,8 @@ import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_stone_angel.MoonS
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy.SunFairyRenderer;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollRenderer;
 import net.MarkustheSlime.twosidesmod.fluid.*;
-import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
-import net.MarkustheSlime.twosidesmod.recipe.ModRecipes;
 import net.MarkustheSlime.twosidesmod.screen.DmTableScreen;
-import net.MarkustheSlime.twosidesmod.screen.ModMenuTypes;
 import net.MarkustheSlime.twosidesmod.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -27,9 +22,12 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityLeaveLevelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -39,9 +37,17 @@ import net.MarkustheSlime.twosidesmod.painting.ModPaintings;
 import net.MarkustheSlime.twosidesmod.world.feature.ModConfiguredFeatures;
 import net.MarkustheSlime.twosidesmod.world.feature.ModPlacedFeatures;
 import software.bernie.geckolib3.GeckoLib;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.network.GeckoLibNetwork;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
+import software.bernie.geckolib3.resource.ResourceListener;
+
+
+import static software.bernie.geckolib3.GeckoLib.hasInitialized;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
+@Mod.EventBusSubscriber
 @Mod(TwoSidesMod.MOD_ID)
 public class TwoSidesMod
 {
@@ -49,9 +55,17 @@ public class TwoSidesMod
     public static final String MOD_ID = "twosidesmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    synchronized public static void initialize() {
+        if (!hasInitialized) {
+            DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ResourceListener::registerReloadListener);
+            GeckoLibNetwork.initialize();
+        }
+        hasInitialized = true;
+    }
 
     public TwoSidesMod()
     {
+        TwoSidesMod.initialize();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModBlocks.register((modEventBus));
@@ -78,6 +92,7 @@ public class TwoSidesMod
         ModEntityTypes.register(modEventBus);
 
         GeckoLib.initialize();
+        GeckoLibNetwork.initialize();
 
         modEventBus.addListener(this::commonSetup);
 
@@ -126,6 +141,7 @@ public class TwoSidesMod
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_GS.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_GS.get(), RenderType.translucent());
 
+
             MenuScreens.register(ModMenuTypes.DM_TABLE_MENU.get(), DmTableScreen::new);
 
             EntityRenderers.register(ModEntityTypes.DM_GOLEM.get(), DmGolemRenderer::new);
@@ -135,5 +151,22 @@ public class TwoSidesMod
             EntityRenderers.register(ModEntityTypes.MOON_FAIRY.get(), MoonFairyRenderer::new);
             EntityRenderers.register(ModEntityTypes.MOON_STONE_ANGEL.get(), MoonStoneAngelRenderer::new);
         }
+    }
+    @SubscribeEvent
+    public static void onEntityRemoved(EntityLeaveLevelEvent event) {
+        if (event.getEntity() == null) {
+            return;
+        }
+        if (event.getEntity().getUUID() == null) {
+            return;
+        }
+        if (event.getLevel().isClientSide)
+            GeoArmorRenderer.LIVING_ENTITY_RENDERERS.values().forEach(instances -> {
+                if (instances.containsKey(event.getEntity().getUUID())) {
+                    AnimationController.ModelFetcher<?> beGone = instances.get(event.getEntity().getUUID());
+                    AnimationController.removeModelFetcher(beGone);
+                    instances.remove(event.getEntity().getUUID());
+                }
+            });
     }
 }

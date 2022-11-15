@@ -1,6 +1,7 @@
-package net.MarkustheSlime.twosidesmod.recipe;
+package net.MarkustheSlime.twosidesmod;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.recipe.DmTableRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

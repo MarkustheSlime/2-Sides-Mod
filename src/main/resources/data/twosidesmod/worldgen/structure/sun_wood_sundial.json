@@ -9,5 +9,18 @@
     "absolute": 0
   },
   "project_start_to_heightmap": "OCEAN_FLOOR_WG",
-  "use_expansion_hack": false
+  "use_expansion_hack": false,
+  "spawn_overrides": {
+    "creature": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "twosidesmod:sun_fairy",
+          "weight": 1,
+          "minCount": 2,
+          "maxCount": 3
+        }
+      ]
+    }
+  }
 }

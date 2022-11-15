@@ -1,7 +1,6 @@
 package net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy;
 
-import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
-import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
+import net.MarkustheSlime.twosidesmod.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -23,14 +22,16 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class SunFairyEntity extends Animal implements IAnimatable {
 
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public SunFairyEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -67,11 +68,11 @@ public class SunFairyEntity extends Animal implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sun_fairy.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sun_fairy.walk",  ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sun_fairy.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.sun_fairy.idle",  ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 

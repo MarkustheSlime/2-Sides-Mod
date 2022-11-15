@@ -99,7 +99,16 @@
   "fluid_type.twosidesmod.moon_syrup_fluid": "Moon Syrup",
   "fluid_type.twosidesmod.gorgon_serum_fluid": "Transmuation Serum",
 
-  "itemGroup.twosidestab": "2 Sides",
+  "itemGroup.twosidesitems": "2 Sides Items",
+  "itemGroup.twosidesblocks": "2 Sides Blocks",
+  "itemGroup.twosidesentities": "2 Sides Entities",
+  "itemGroup.twosidesfluids": "2 Sides Fluids",
+  "itemGroup.twosidesarmors": "2 Sides Armors",
+  "itemGroup.twosidesweapons": "2 Sides Weapons",
+  "itemGroup.twosidestools": "2 Sides Tools",
+  "itemGroup.twosidescrops": "2 Sides Crops",
+  "itemGroup.twosidesfoods": "2 Sides Foods",
+
   "entity.minecraft.villager.twosidesmod.nighttime_guru": "Nighttime Guru",
   "entity.twosidesmod.dm_golem": "Dwarven Magic Golem",
   "entity.twosidesmod.deep_gorgon": "Deep Gorgon",

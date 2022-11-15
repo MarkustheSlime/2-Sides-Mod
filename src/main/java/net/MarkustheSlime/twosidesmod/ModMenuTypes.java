@@ -1,6 +1,7 @@
-package net.MarkustheSlime.twosidesmod.screen;
+package net.MarkustheSlime.twosidesmod;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.screen.DmTableMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;

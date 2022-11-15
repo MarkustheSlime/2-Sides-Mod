@@ -25,17 +25,19 @@ import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class MoonStoneAngelEntity extends Monster implements IAnimatable, NeutralMob {
 
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public MoonStoneAngelEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -106,18 +108,18 @@ public class MoonStoneAngelEntity extends Monster implements IAnimatable, Neutra
     
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.walk",  ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.idle",  ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 
     private PlayState attackPredicate(AnimationEvent event) {
         if(this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.attack", false));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.moonshard_angel.attack",  ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             this.swinging = false;
         }
 

@@ -1,11 +1,13 @@
-package net.MarkustheSlime.twosidesmod.util;
+package net.MarkustheSlime.twosidesmod;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public class ModTags {
     public static class Blocks {
@@ -19,10 +21,6 @@ public class ModTags {
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(TwoSidesMod.MOD_ID, name));
-        }
-
-        private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(new ResourceLocation("forge", name));
         }
     }
 }

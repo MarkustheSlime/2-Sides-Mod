@@ -16,7 +16,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
 
-public class ClientEvents extends PlayerEnergy{
+import static software.bernie.geckolib3.renderers.geo.GeoArmorRenderer.registerArmorRenderer;
+
+public class ClientEvents extends PlayerEnergy {
     @Mod.EventBusSubscriber (modid = TwoSidesMod.MOD_ID, value = Dist.CLIENT)
     public static class ClientForgeEvents{
 
@@ -44,8 +46,10 @@ public class ClientEvents extends PlayerEnergy{
 
     }
 
-    @Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = TwoSidesMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModBusEvents{
+
+
         @SubscribeEvent
         public static void  onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(KeyBinding.TK1_KEY);

@@ -3,7 +3,7 @@ package net.MarkustheSlime.twosidesmod.world.feature;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
