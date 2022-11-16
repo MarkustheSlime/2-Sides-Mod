@@ -3,8 +3,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"0": "twosidesmod:block/deepslate_control_ore_ore",
-		"1": "twosidesmod:block/deepslate_control_ore",
-		"particle": "twosidesmod:block/deepslate_ore_ore"
+		"1": "twosidesmod:block/deepslate_control_ore"
 	},
 	"elements": [
 		{
@@ -676,6 +675,30 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 1, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
 	"groups": [
 		0,
 		{
