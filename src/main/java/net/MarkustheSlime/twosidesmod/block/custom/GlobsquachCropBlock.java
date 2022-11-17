@@ -1,6 +1,6 @@
 package net.MarkustheSlime.twosidesmod.block.custom;
 
-import net.MarkustheSlime.twosidesmod.ModItems;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;

@@ -1,5 +1,6 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.item;
 
+import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;

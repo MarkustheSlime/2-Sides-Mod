@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.util;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.minecraft.core.Registry;

@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.screen;
 
-import net.MarkustheSlime.twosidesmod.ModBlocks;
-import net.MarkustheSlime.twosidesmod.ModMenuTypes;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.recipe.ModMenuTypes;
 import net.MarkustheSlime.twosidesmod.block.entity.DmTableBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;

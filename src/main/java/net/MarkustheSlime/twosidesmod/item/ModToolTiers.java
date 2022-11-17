@@ -1,8 +1,8 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.item;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.ModItems;
-import net.MarkustheSlime.twosidesmod.ModTags;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
+import net.MarkustheSlime.twosidesmod.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;

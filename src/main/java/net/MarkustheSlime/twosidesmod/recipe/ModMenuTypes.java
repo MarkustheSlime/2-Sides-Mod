@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.recipe;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.screen.DmTableMenu;

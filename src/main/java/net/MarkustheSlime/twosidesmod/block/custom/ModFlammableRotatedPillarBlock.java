@@ -1,6 +1,6 @@
 package net.MarkustheSlime.twosidesmod.block.custom;
 
-import net.MarkustheSlime.twosidesmod.ModBlocks;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;

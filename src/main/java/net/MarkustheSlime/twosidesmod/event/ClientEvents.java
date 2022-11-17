@@ -3,7 +3,15 @@ package net.MarkustheSlime.twosidesmod.event;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
 import net.MarkustheSlime.twosidesmod.block.entity.renderer.DmTableBlockEntityRenderer;
+import net.MarkustheSlime.twosidesmod.block.entity.renderer.LifeMatrixBlockEntityRenderer;
+import net.MarkustheSlime.twosidesmod.block.entity.renderer.SoulMatrixBlockEntityRenderer;
 import net.MarkustheSlime.twosidesmod.client.MarkeHudOverlay;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorRenderer;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.MARKERCC2SPACKET;
 import net.MarkustheSlime.twosidesmod.util.KeyBinding;
@@ -15,6 +23,7 @@ import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.MarkustheSlime.twosidesmod.marke_energy.PlayerEnergy;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 import static software.bernie.geckolib3.renderers.geo.GeoArmorRenderer.registerArmorRenderer;
 
@@ -69,6 +78,17 @@ public class ClientEvents extends PlayerEnergy {
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntities.DM_TABLE.get(),
                     DmTableBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.SOUL_MATRIX_TILE.get(),
+                    SoulMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.LIFE_MATRIX_TILE.get(),
+                    LifeMatrixBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(final EntityRenderersEvent.AddLayers event) {
+            GeoArmorRenderer.registerArmorRenderer(MoonStoneArmorItem.class, () -> new MoonStoneArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(SunWoodArmorItem.class, () -> new SunWoodArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(DwarvenArmorItem.class, () -> new DwarvenArmorRenderer());
         }
     }
 }

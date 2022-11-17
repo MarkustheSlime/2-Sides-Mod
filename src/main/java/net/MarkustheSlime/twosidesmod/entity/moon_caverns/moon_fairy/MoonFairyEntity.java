@@ -1,6 +1,6 @@
 package net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy;
 
-import net.MarkustheSlime.twosidesmod.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;

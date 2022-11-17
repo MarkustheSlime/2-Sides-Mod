@@ -1,5 +1,9 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.block;
 
+import net.MarkustheSlime.twosidesmod.ModCreativeModeTab;
+import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.block.custom.*;
 import net.MarkustheSlime.twosidesmod.world.tree.MoonSyrupFlowerTreeGrower;
 import net.MarkustheSlime.twosidesmod.world.tree.SunSapPineTreeGrower;
@@ -31,6 +35,35 @@ public class ModBlocks {
     public static final RegistryObject<Block> DM_BLOCK = registerBlock("dm_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> SOUL_BLOCK = registerBlock("soul_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> LIFE_BLOCK = registerBlock("life_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> POWER_BLOCK = registerBlock("power_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> CONTROL_BLOCK = registerBlock("control_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> PRIMALITY_BLOCK = registerBlock("primality_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> INFLUENCE_BLOCK = registerBlock("influence_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> VITALITY_BLOCK = registerBlock("vitality_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+
+    public static final RegistryObject<Block> SOUL_MATRIX = registerBlock("soul_matrix",
+            () -> new SoulMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> LIFE_MATRIX = registerBlock("life_matrix",
+            () -> new LifeMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+
 
     public static final RegistryObject<WallBlock> DM_WALL = registerBlock("dm_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE)

@@ -1,7 +1,9 @@
 package net.MarkustheSlime.twosidesmod;
 
 import com.mojang.logging.LogUtils;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemRenderer;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyRenderer;
@@ -9,7 +11,10 @@ import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_stone_angel.MoonS
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy.SunFairyRenderer;
 import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollRenderer;
 import net.MarkustheSlime.twosidesmod.fluid.*;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
+import net.MarkustheSlime.twosidesmod.recipe.ModMenuTypes;
+import net.MarkustheSlime.twosidesmod.recipe.ModRecipes;
 import net.MarkustheSlime.twosidesmod.screen.DmTableScreen;
 import net.MarkustheSlime.twosidesmod.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -68,7 +73,7 @@ public class TwoSidesMod
         TwoSidesMod.initialize();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModBlocks.register((modEventBus));
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
         ModVillagers.register(modEventBus);

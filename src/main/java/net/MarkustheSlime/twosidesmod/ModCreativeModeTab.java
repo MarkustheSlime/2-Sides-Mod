@@ -1,5 +1,7 @@
 package net.MarkustheSlime.twosidesmod;
 
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
@@ -7,7 +9,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab TWO_SIDES_ITEMS = new CreativeModeTab("twosidesitems") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.DM_PICKAXE.get());
+            return new ItemStack(ModItems.DM_Shard.get());
         }
     };
     public static final CreativeModeTab TWO_SIDES_BLOCKS = new CreativeModeTab("twosidesblocks") {

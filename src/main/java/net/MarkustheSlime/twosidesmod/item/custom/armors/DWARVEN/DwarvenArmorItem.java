@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN;
 
 import com.google.common.collect.ImmutableMap;
-import net.MarkustheSlime.twosidesmod.ModArmorTiers;
+import net.MarkustheSlime.twosidesmod.item.ModArmorTiers;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;

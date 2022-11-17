@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.block.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.ModBlocks;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +16,14 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("dm_table", () ->
                     BlockEntityType.Builder.of(DmTableBlockEntity::new,
                             ModBlocks.DM_TABLE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<SoulMatrixBlockEntity>> SOUL_MATRIX_TILE =
+            BLOCK_ENTITIES.register("soulmatrixblocktile", () ->
+                    BlockEntityType.Builder.of(SoulMatrixBlockEntity::new,
+                            ModBlocks.SOUL_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<SoulMatrixBlockEntity>> LIFE_MATRIX_TILE =
+            BLOCK_ENTITIES.register("lifematrixblocktile", () ->
+                    BlockEntityType.Builder.of(SoulMatrixBlockEntity::new,
+                            ModBlocks.LIFE_MATRIX.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

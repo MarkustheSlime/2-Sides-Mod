@@ -1,9 +1,8 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.fluid;
 
-import net.MarkustheSlime.twosidesmod.fluid.DME;
-import net.MarkustheSlime.twosidesmod.fluid.GorgonSerumFluid;
-import net.MarkustheSlime.twosidesmod.fluid.MoonSyrup;
-import net.MarkustheSlime.twosidesmod.fluid.SunSap;
+import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;

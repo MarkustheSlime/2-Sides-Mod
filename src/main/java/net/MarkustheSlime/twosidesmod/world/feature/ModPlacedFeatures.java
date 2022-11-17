@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.world.feature;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.ModBlocks;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;

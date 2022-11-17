@@ -1,8 +1,8 @@
 package net.MarkustheSlime.twosidesmod.block.entity;
 
 import net.MarkustheSlime.twosidesmod.block.custom.DMTABLEBLOCK;
-import net.MarkustheSlime.twosidesmod.ModFluids;
-import net.MarkustheSlime.twosidesmod.ModItems;
+import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
+import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.EnergySyncS2CPacket;
 import net.MarkustheSlime.twosidesmod.networking.packet.FluidSyncS2CPacket;

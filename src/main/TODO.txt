@@ -1,22 +1,22 @@
 10/4/22: Current Priority
--Replace TreeGrower for moonstone flowers for custom structures.
--Create, model, and texture MoonStone and SunWood items - WIP
+-Replace TreeGrower for moonstone flowers for custom structures WIP
+-Create, model, and texture MoonStone and SunWood items - DONE
    -Sun Wood Pickaxe - DONE
    -Sun Wood Sword - DONE
-   -Sun Wood Armor - X
-   -Moon Stone Armor - X
+   -Sun Wood Armor - DONE
+   -Moon Stone Armor - DONE
    -Moon Stone Axe(sword item) - DONE
    -Moon Stone Scythe - DONE
 
--Start on SunSap Sundial and MoonStone Sanctum structures - WIP
-    -create biome for SunWood and Moonstone - X
--Create table for turning Transmutation Serum into SunSap and MoonSyrup - X
--Figure out how to do multiple inputs for Crystalizing Table - X
--Add recipes for geode chunks - X
-    -create, model, animate, and texture them - X
--Add recipes for geode blocks - X
-    -Crafting makes spawn egg for monster, which drops block - X
-    -create, model, animate, and texture monster - X
+-Start on SunSap Sundial and MoonStone Sanctum structures - DONE
+    -create biome for SunWood and Moonstone - WIP
+-Create table for turning Transmutation Serum into SunSap and MoonSyrup - WIP
+-Figure out how to do multiple inputs for Crystalizing Table - WIP
+-Add recipes for geode chunks - WIP
+    -create, model, animate, and texture them - WIP
+-Add recipes for geode blocks - WIP
+    -Crafting makes spawn egg for monster, which drops block - WIP
+    -create, model, animate, and texture monster - WIP
 
 Least Priority:
 -Create abilities - X

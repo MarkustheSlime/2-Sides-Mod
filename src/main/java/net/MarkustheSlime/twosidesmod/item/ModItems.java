@@ -1,8 +1,14 @@
-package net.MarkustheSlime.twosidesmod;
+package net.MarkustheSlime.twosidesmod.item;
 
+import net.MarkustheSlime.twosidesmod.*;
+import net.MarkustheSlime.twosidesmod.block.ModBlocks;
+import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.geodes.LifeMatrixBlockItem;
+import net.MarkustheSlime.twosidesmod.item.custom.geodes.SoulMatrixBlockItem;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
@@ -16,6 +22,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TwoSidesMod.MOD_ID);
+
+    public static final RegistryObject<Item> SOUL_MATRIX_ITEM = ITEMS.register("soul_matrix_item",
+            () -> new SoulMatrixBlockItem(ModBlocks.SOUL_MATRIX.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_BLOCKS)));
+    public static final RegistryObject<Item> LIFE_MATRIX_ITEM = ITEMS.register("life_matrix_item",
+            () -> new LifeMatrixBlockItem(ModBlocks.LIFE_MATRIX.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_BLOCKS)));
 
     public static final RegistryObject<Item> DM_Shard = ITEMS.register("dm_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
