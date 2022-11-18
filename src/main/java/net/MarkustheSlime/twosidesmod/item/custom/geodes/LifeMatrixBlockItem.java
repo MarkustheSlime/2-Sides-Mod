@@ -1,7 +1,6 @@
 package net.MarkustheSlime.twosidesmod.item.custom.geodes;
 
 import net.MarkustheSlime.twosidesmod.item.custom.geodes.renderer.LifeMatrixBlockItemRenderer;
-import net.MarkustheSlime.twosidesmod.item.custom.geodes.renderer.SoulMatrixBlockItemRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;

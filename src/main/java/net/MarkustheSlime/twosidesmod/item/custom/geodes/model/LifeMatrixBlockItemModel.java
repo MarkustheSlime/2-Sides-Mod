@@ -2,7 +2,6 @@ package net.MarkustheSlime.twosidesmod.item.custom.geodes.model;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.item.custom.geodes.LifeMatrixBlockItem;
-import net.MarkustheSlime.twosidesmod.item.custom.geodes.SoulMatrixBlockItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

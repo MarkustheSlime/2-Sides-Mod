@@ -4,6 +4,7 @@ import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 public class ModCreativeModeTab {
     public static final CreativeModeTab TWO_SIDES_ITEMS = new CreativeModeTab("twosidesitems") {
@@ -58,6 +59,12 @@ public class ModCreativeModeTab {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ModItems.GLOBSQUACH.get());
+        }
+    };
+    public static final CreativeModeTab TWO_SIDES_EXTRAS = new CreativeModeTab("twosidesextras") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(Items.BARRIER);
         }
     };
 }

@@ -25,10 +25,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOUL_MATRIX_ITEM = ITEMS.register("soul_matrix_item",
             () -> new SoulMatrixBlockItem(ModBlocks.SOUL_MATRIX.get(),
-                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_BLOCKS)));
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_EXTRAS)));
     public static final RegistryObject<Item> LIFE_MATRIX_ITEM = ITEMS.register("life_matrix_item",
             () -> new LifeMatrixBlockItem(ModBlocks.LIFE_MATRIX.get(),
-                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_BLOCKS)));
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_EXTRAS)));
 
     public static final RegistryObject<Item> DM_Shard = ITEMS.register("dm_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));

@@ -20,9 +20,9 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("soulmatrixblocktile", () ->
                     BlockEntityType.Builder.of(SoulMatrixBlockEntity::new,
                             ModBlocks.SOUL_MATRIX.get()).build(null));
-    public static final RegistryObject<BlockEntityType<SoulMatrixBlockEntity>> LIFE_MATRIX_TILE =
+    public static final RegistryObject<BlockEntityType<LifeMatrixBlockEntity>> LIFE_MATRIX_TILE =
             BLOCK_ENTITIES.register("lifematrixblocktile", () ->
-                    BlockEntityType.Builder.of(SoulMatrixBlockEntity::new,
+                    BlockEntityType.Builder.of(LifeMatrixBlockEntity::new,
                             ModBlocks.LIFE_MATRIX.get()).build(null));
 
     public static void register(IEventBus eventBus){

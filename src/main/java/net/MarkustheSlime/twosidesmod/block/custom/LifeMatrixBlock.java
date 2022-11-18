@@ -1,5 +1,6 @@
 package net.MarkustheSlime.twosidesmod.block.custom;
 
+import net.MarkustheSlime.twosidesmod.block.entity.LifeMatrixBlockEntity;
 import net.MarkustheSlime.twosidesmod.block.entity.SoulMatrixBlockEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -19,10 +21,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-
 public class LifeMatrixBlock extends Block implements EntityBlock {
 
-    public LifeMatrixBlock(Properties properties) {
+    public LifeMatrixBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 
@@ -66,7 +67,7 @@ public class LifeMatrixBlock extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new SoulMatrixBlockEntity(pos, state);
+        return new LifeMatrixBlockEntity(pos, state);
     }
 
     @Override
@@ -76,7 +77,7 @@ public class LifeMatrixBlock extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack stack, BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(Component.literal("You feel weak yet healed as you are near this...")
+        tooltip.add(Component.literal("You feel weak yet envigored when you're near this...")
                 .withStyle(ChatFormatting.DARK_BLUE,
                         ChatFormatting.BOLD));
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
