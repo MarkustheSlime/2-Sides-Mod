@@ -29,7 +29,7 @@ public class LifeMatrixBlock extends Block implements EntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     private static final VoxelShape SHAPE =
-            Block.box(4, 0, 4, 12, 16, 12);
+            Block.box(4, 1, 4, 12, 14, 12);
 
     @Override
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {

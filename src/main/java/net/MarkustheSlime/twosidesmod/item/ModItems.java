@@ -7,8 +7,8 @@ import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
-import net.MarkustheSlime.twosidesmod.item.custom.geodes.LifeMatrixBlockItem;
-import net.MarkustheSlime.twosidesmod.item.custom.geodes.SoulMatrixBlockItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.geodes.*;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
@@ -25,10 +25,25 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOUL_MATRIX_ITEM = ITEMS.register("soul_matrix_item",
             () -> new SoulMatrixBlockItem(ModBlocks.SOUL_MATRIX.get(),
-                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_EXTRAS)));
+                    new Item.Properties()));
     public static final RegistryObject<Item> LIFE_MATRIX_ITEM = ITEMS.register("life_matrix_item",
             () -> new LifeMatrixBlockItem(ModBlocks.LIFE_MATRIX.get(),
-                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_EXTRAS)));
+                    new Item.Properties()));
+    public static final RegistryObject<Item> POWER_MATRIX_ITEM = ITEMS.register("power_matrix_item",
+            () -> new PowerMatrixBlockItem(ModBlocks.POWER_MATRIX.get(),
+                    new Item.Properties()));
+    public static final RegistryObject<Item> CONTROL_MATRIX_ITEM = ITEMS.register("control_matrix_item",
+            () -> new ControlMatrixBlockItem(ModBlocks.CONTROL_MATRIX.get(),
+                    new Item.Properties()));
+    public static final RegistryObject<Item> PRIMAL_MATRIX_ITEM = ITEMS.register("primal_matrix_item",
+            () -> new PrimalMatrixBlockItem(ModBlocks.PRIMAL_MATRIX.get(),
+                    new Item.Properties()));
+    public static final RegistryObject<Item> INFLUENCE_MATRIX_ITEM = ITEMS.register("influence_matrix_item",
+            () -> new InfluenceMatrixBlockItem(ModBlocks.INFLUENCE_MATRIX.get(),
+                    new Item.Properties()));
+    public static final RegistryObject<Item> VITALITY_MATRIX_ITEM = ITEMS.register("vitality_matrix_item",
+            () -> new VitalityMatrixBlockItem(ModBlocks.VITALITY_MATRIX.get(),
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> DM_Shard = ITEMS.register("dm_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
@@ -161,6 +176,18 @@ public class ModItems {
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
     public static final RegistryObject< DwarvenArmorItem> DWARVEN_BOOTS = ITEMS.register("dwarven_boots",
             () -> new DwarvenArmorItem(ModArmorTiers.DWARVEN, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<VitalityArmorItem> VITALITY_HELMET = ITEMS.register("vitality_helm",
+            () -> new VitalityArmorItem(ModArmorTiers.VITALITY, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< VitalityArmorItem> VITALITY_CHESTPLATE = ITEMS.register("vitality_chest",
+            () -> new VitalityArmorItem(ModArmorTiers.VITALITY, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< VitalityArmorItem> VITALITY_LEGGINGS = ITEMS.register("vitality_leggings",
+            () -> new VitalityArmorItem(ModArmorTiers.VITALITY, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< VitalityArmorItem> VITALITY_BOOTS = ITEMS.register("vitality_boots",
+            () -> new VitalityArmorItem(ModArmorTiers.VITALITY, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
 
 

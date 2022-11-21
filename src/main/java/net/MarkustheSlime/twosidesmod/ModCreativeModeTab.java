@@ -61,10 +61,4 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.GLOBSQUACH.get());
         }
     };
-    public static final CreativeModeTab TWO_SIDES_EXTRAS = new CreativeModeTab("twosidesextras") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(Items.BARRIER);
-        }
-    };
 }

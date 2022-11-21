@@ -22,6 +22,41 @@ public enum ModArmorTiers implements ArmorMaterial {
     DWARVEN("dwarven", 35, new int[]{3, 6, 8, 3}, 15,
             SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.25F, () -> {
         return Ingredient.of(ModItems.DM_Shard.get());
+    }),
+
+    VITALITY("vitality", 50, new int[]{8, 11, 13, 8}, 30,
+    SoundEvents.AMETHYST_CLUSTER_PLACE, 8.0F, 0.6F, () -> {
+        return Ingredient.of(ModItems.VITALITY_Shard.get());
+    }),
+
+    INFLUENCE("influence", 50, new int[]{8, 11, 13, 8}, 30,
+    SoundEvents.AMETHYST_CLUSTER_PLACE, 6.0F, 0.4F, () -> {
+        return Ingredient.of(ModItems.INFLUENCE_Shard.get());
+    }),
+
+    PRIMALITY("primality", 50, new int[]{8, 11, 13, 8}, 30,
+            SoundEvents.ENDERMAN_AMBIENT, 5.0F, 0.3F, () -> {
+        return Ingredient.of(ModItems.PRIMAL_Shard.get());
+    }),
+
+    CONTROL("control", 50, new int[]{8, 11, 13, 8}, 30,
+            SoundEvents.WOOL_PLACE, 4.5F, 0.3F, () -> {
+        return Ingredient.of(ModItems.CONTROL_Shard.get());
+    }),
+
+    POWER("power", 50, new int[]{8, 11, 13, 8}, 30,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 7.0F, 0.8F, () -> {
+        return Ingredient.of(ModItems.POWER_Shard.get());
+    }),
+
+    LIFE("life", 50, new int[]{8, 11, 13, 8}, 30,
+            SoundEvents.BIG_DRIPLEAF_PLACE, 4.0F, 0.4F, () -> {
+        return Ingredient.of(ModItems.LIFE_Shard.get());
+    }),
+
+    SOUL("soul", 50, new int[]{8, 11, 13, 8}, 30,
+            SoundEvents.ANVIL_PLACE, 6.0F, 0.5F, () -> {
+        return Ingredient.of(ModItems.SOUL_Shard.get());
     });
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

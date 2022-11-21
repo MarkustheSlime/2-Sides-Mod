@@ -29,13 +29,13 @@ public class MoonStoneArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.NIGHT_VISION, 999999, 1)).build();
+                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 1)).build();
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP2 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.JUMP, 999999, 1)).build();
+                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.JUMP, 20, 1)).build();
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP3 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.SLOW_FALLING, 999999, 1)).build();
+                    .put(ModArmorTiers.MOON_STONE, new MobEffectInstance(MobEffects.SLOW_FALLING, 20, 1)).build();
 
     public MoonStoneArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);

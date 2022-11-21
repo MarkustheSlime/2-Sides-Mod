@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.item.custom.armors.SUN;
+package net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY;
 
 import com.google.common.collect.ImmutableMap;
 import net.MarkustheSlime.twosidesmod.item.ModArmorTiers;
@@ -6,7 +6,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -21,26 +23,24 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.Map;
 
-public class SunWoodArmorItem extends GeoArmorItem implements IAnimatable {
+public class VitalityArmorItem extends GeoArmorItem implements IAnimatable {
+
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
+    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.SUN_WOOD, new MobEffectInstance(MobEffects.GLOWING, 1200, 1)).build();
+                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1)).build();
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP2 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.SUN_WOOD, new MobEffectInstance(MobEffects.JUMP, 20, 1)).build();
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP3 =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.SUN_WOOD, new MobEffectInstance(MobEffects.SLOW_FALLING, 20, 1)).build();
+                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.ABSORPTION, 20, 1)).build();
 
-    public SunWoodArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
+    public VitalityArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);
     }
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<SunWoodArmorItem>(this, "controller",
+        data.addAnimationController(new AnimationController<VitalityArmorItem>(this, "controller",
                 20, this::predicate));
     }
 
@@ -64,7 +64,7 @@ public class SunWoodArmorItem extends GeoArmorItem implements IAnimatable {
     }
 
     private void evaluateArmorEffects(Player player) {
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP1.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             MobEffectInstance mapStatusEffect = entry.getValue();
 
@@ -73,14 +73,6 @@ public class SunWoodArmorItem extends GeoArmorItem implements IAnimatable {
             }
         }
         for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP2.entrySet()) {
-            ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance mapStatusEffect = entry.getValue();
-
-            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-            }
-        }
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP3.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             MobEffectInstance mapStatusEffect = entry.getValue();
 
@@ -128,24 +120,5 @@ public class SunWoodArmorItem extends GeoArmorItem implements IAnimatable {
 
         return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
                 leggings.getMaterial() == material && boots.getMaterial() == material;
-    }
-
-    @Override
-    public boolean elytraFlightTick(ItemStack stack, net.minecraft.world.entity.LivingEntity entity, int flightTicks) {
-        if (!entity.level.isClientSide) {
-            int nextFlightTick = flightTicks + 1;
-            if (nextFlightTick % 10 == 0) {
-                if (nextFlightTick % 20 == 0) {
-                    stack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(net.minecraft.world.entity.EquipmentSlot.CHEST));
-                }
-                entity.gameEvent(net.minecraft.world.level.gameevent.GameEvent.ELYTRA_GLIDE);
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public boolean canElytraFly(ItemStack stack, net.minecraft.world.entity.LivingEntity entity) {
-        return ElytraItem.isFlyEnabled(stack);
     }
 }

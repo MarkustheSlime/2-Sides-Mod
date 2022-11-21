@@ -29,7 +29,7 @@ public class DwarvenArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.DWARVEN, new MobEffectInstance(MobEffects.DIG_SPEED, 999999, 1)).build();
+                    .put(ModArmorTiers.DWARVEN, new MobEffectInstance(MobEffects.DIG_SPEED, 20, 1)).build();
 
     public DwarvenArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);

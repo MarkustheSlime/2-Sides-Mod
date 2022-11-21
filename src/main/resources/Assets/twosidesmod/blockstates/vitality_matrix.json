@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "y": 0,
+      "model": "twosidesmod:block/vitality_matrix"
+    },
+    "facing=south": {
+      "y": 180,
+      "model": "twosidesmod:block/vitality_matrix"
+    },
+    "facing=east": {
+      "y": 90,
+      "model": "twosidesmod:block/vitality_matrix"
+    },
+    "facing=west": {
+      "y": 270,
+      "model": "twosidesmod:block/vitality_matrix"
+    },
+    "facing=up": {
+      "y": 0,
+      "model": "twosidesmod:block/vitality_matrix"
+    },
+    "facing=down": {
+      "y": 0,
+      "model": "twosidesmod:block/vitality_matrix"
+    }
+  }
+}

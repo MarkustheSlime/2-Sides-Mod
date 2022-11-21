@@ -2,9 +2,7 @@ package net.MarkustheSlime.twosidesmod.event;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
-import net.MarkustheSlime.twosidesmod.block.entity.renderer.DmTableBlockEntityRenderer;
-import net.MarkustheSlime.twosidesmod.block.entity.renderer.LifeMatrixBlockEntityRenderer;
-import net.MarkustheSlime.twosidesmod.block.entity.renderer.SoulMatrixBlockEntityRenderer;
+import net.MarkustheSlime.twosidesmod.block.entity.renderer.*;
 import net.MarkustheSlime.twosidesmod.client.MarkeHudOverlay;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorRenderer;
@@ -12,6 +10,8 @@ import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorRenderer;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
 import net.MarkustheSlime.twosidesmod.networking.packet.MARKERCC2SPACKET;
 import net.MarkustheSlime.twosidesmod.util.KeyBinding;
@@ -82,6 +82,16 @@ public class ClientEvents extends PlayerEnergy {
                     SoulMatrixBlockEntityRenderer::new);
             event.registerBlockEntityRenderer(ModBlockEntities.LIFE_MATRIX_TILE.get(),
                     LifeMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.POWER_MATRIX_TILE.get(),
+                    PowerMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.CONTROL_MATRIX_TILE.get(),
+                    ControlMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.PRIMAL_MATRIX_TILE.get(),
+                    PrimalMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.INFLUENCE_MATRIX_TILE.get(),
+                    InfluenceMatrixBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.VITALITY_MATRIX_TILE.get(),
+                    VitalityMatrixBlockEntityRenderer::new);
         }
 
         @SubscribeEvent
@@ -89,6 +99,7 @@ public class ClientEvents extends PlayerEnergy {
             GeoArmorRenderer.registerArmorRenderer(MoonStoneArmorItem.class, () -> new MoonStoneArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(SunWoodArmorItem.class, () -> new SunWoodArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(DwarvenArmorItem.class, () -> new DwarvenArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(VitalityArmorItem.class, () -> new VitalityArmorRenderer());
         }
     }
 }

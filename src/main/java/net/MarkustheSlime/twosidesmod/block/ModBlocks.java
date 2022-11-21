@@ -63,6 +63,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIFE_MATRIX = registerBlock("life_matrix",
             () -> new LifeMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> POWER_MATRIX = registerBlock("power_matrix",
+            () -> new PowerMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> CONTROL_MATRIX = registerBlock("control_matrix",
+            () -> new ControlMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> PRIMAL_MATRIX = registerBlock("primal_matrix",
+            () -> new PrimalMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> INFLUENCE_MATRIX = registerBlock("influence_matrix",
+            () -> new InfluenceMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
+    public static final RegistryObject<Block> VITALITY_MATRIX = registerBlock("vitality_matrix",
+            () -> new VitalityMatrixBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TWO_SIDES_BLOCKS);
 
 
     public static final RegistryObject<WallBlock> DM_WALL = registerBlock("dm_wall",

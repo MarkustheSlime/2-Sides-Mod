@@ -24,6 +24,26 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("lifematrixblocktile", () ->
                     BlockEntityType.Builder.of(LifeMatrixBlockEntity::new,
                             ModBlocks.LIFE_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<PowerMatrixBlockEntity>> POWER_MATRIX_TILE =
+            BLOCK_ENTITIES.register("powermatrixblocktile", () ->
+                    BlockEntityType.Builder.of(PowerMatrixBlockEntity::new,
+                            ModBlocks.POWER_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ControlMatrixBlockEntity>> CONTROL_MATRIX_TILE =
+            BLOCK_ENTITIES.register("controlmatrixblocktile", () ->
+                    BlockEntityType.Builder.of(ControlMatrixBlockEntity::new,
+                            ModBlocks.CONTROL_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<PrimalMatrixBlockEntity>> PRIMAL_MATRIX_TILE =
+            BLOCK_ENTITIES.register("primalmatrixblocktile", () ->
+                    BlockEntityType.Builder.of(PrimalMatrixBlockEntity::new,
+                            ModBlocks.PRIMAL_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<InfluenceMatrixBlockEntity>> INFLUENCE_MATRIX_TILE =
+            BLOCK_ENTITIES.register("influencematrixblocktile", () ->
+                    BlockEntityType.Builder.of(InfluenceMatrixBlockEntity::new,
+                            ModBlocks.INFLUENCE_MATRIX.get()).build(null));
+    public static final RegistryObject<BlockEntityType<VitalityMatrixBlockEntity>> VITALITY_MATRIX_TILE =
+            BLOCK_ENTITIES.register("vitalitymatrixblocktile", () ->
+                    BlockEntityType.Builder.of(VitalityMatrixBlockEntity::new,
+                            ModBlocks.VITALITY_MATRIX.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

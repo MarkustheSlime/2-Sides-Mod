@@ -1,7 +1,7 @@
 package net.MarkustheSlime.twosidesmod.block.custom;
 
-import net.MarkustheSlime.twosidesmod.block.entity.DmTableBlockEntity;
-import net.MarkustheSlime.twosidesmod.block.entity.SoulMatrixBlockEntity;
+import net.MarkustheSlime.twosidesmod.block.entity.InfluenceMatrixBlockEntity;
+import net.MarkustheSlime.twosidesmod.block.entity.PrimalMatrixBlockEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -9,12 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -24,15 +20,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-public class SoulMatrixBlock extends Block implements EntityBlock {
 
-    public SoulMatrixBlock(BlockBehaviour.Properties properties) {
+public class InfluenceMatrixBlock extends Block implements EntityBlock {
+
+    public InfluenceMatrixBlock(Properties properties) {
         super(properties);
     }
 
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     private static final VoxelShape SHAPE =
-            Block.box(4, 0, 4, 12, 16, 12);
+            Block.box(1, 1, 1, 15, 15, 15);
 
     @Override
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
@@ -70,7 +67,7 @@ public class SoulMatrixBlock extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new SoulMatrixBlockEntity(pos, state);
+        return new InfluenceMatrixBlockEntity(pos, state);
     }
 
     @Override
@@ -80,8 +77,8 @@ public class SoulMatrixBlock extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack stack, BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(Component.literal("You can feel your Soul pulse when you're near this...")
-                .withStyle(ChatFormatting.DARK_PURPLE,
+        tooltip.add(Component.literal("You begin simultaneously developing inferiority and superiority complexes when you're near this...")
+                .withStyle(ChatFormatting.DARK_RED,
                         ChatFormatting.BOLD));
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
