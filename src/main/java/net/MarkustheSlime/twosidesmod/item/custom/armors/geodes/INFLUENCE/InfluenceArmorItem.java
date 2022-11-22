@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY;
+package net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE;
 
 import com.google.common.collect.ImmutableMap;
 import net.MarkustheSlime.twosidesmod.item.ModArmorTiers;
@@ -23,28 +23,21 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.Map;
 
-public class VitalityArmorItem extends GeoArmorItem implements IAnimatable {
+public class InfluenceArmorItem extends GeoArmorItem implements IAnimatable {
 
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1)).build();
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP2 =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.REGENERATION, 20, 1)).build();
+                    .put(ModArmorTiers.INFLUENCE, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 1)).build();
 
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP3 =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.SATURATION, 20, 1)).build();
-
-    public VitalityArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
+    public InfluenceArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);
     }
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<VitalityArmorItem>(this, "controller",
+        data.addAnimationController(new AnimationController<InfluenceArmorItem>(this, "controller",
                 20, this::predicate));
     }
 
@@ -69,22 +62,6 @@ public class VitalityArmorItem extends GeoArmorItem implements IAnimatable {
 
     private void evaluateArmorEffects(Player player) {
         for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP1.entrySet()) {
-            ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance mapStatusEffect = entry.getValue();
-
-            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-            }
-        }
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP2.entrySet()) {
-            ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance mapStatusEffect = entry.getValue();
-
-            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-            }
-        }
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP3.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             MobEffectInstance mapStatusEffect = entry.getValue();
 

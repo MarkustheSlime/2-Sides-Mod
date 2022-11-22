@@ -10,6 +10,8 @@ import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorRenderer;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
@@ -100,6 +102,7 @@ public class ClientEvents extends PlayerEnergy {
             GeoArmorRenderer.registerArmorRenderer(SunWoodArmorItem.class, () -> new SunWoodArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(DwarvenArmorItem.class, () -> new DwarvenArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(VitalityArmorItem.class, () -> new VitalityArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(InfluenceArmorItem.class, () -> new InfluenceArmorRenderer());
         }
     }
 }

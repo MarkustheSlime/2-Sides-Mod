@@ -7,6 +7,7 @@ import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.geodes.*;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
@@ -188,6 +189,18 @@ public class ModItems {
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
     public static final RegistryObject< VitalityArmorItem> VITALITY_BOOTS = ITEMS.register("vitality_boots",
             () -> new VitalityArmorItem(ModArmorTiers.VITALITY, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<InfluenceArmorItem> INFLUENCE_HELMET = ITEMS.register("influence_helm",
+            () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_CHESTPLATE = ITEMS.register("influence_chest",
+            () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_LEGGINGS = ITEMS.register("influence_leggings",
+            () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_BOOTS = ITEMS.register("influence_boots",
+            () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
 
 
