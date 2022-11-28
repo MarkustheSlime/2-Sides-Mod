@@ -7,7 +7,12 @@ import net.MarkustheSlime.twosidesmod.fluid.ModFluids;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.DWARVEN.DwarvenArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.MOON.MoonStoneArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.SUN.SunWoodArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.EARTH.EarthArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.FIRE.FireArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WATER.WaterArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WIND.WindArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.PRIMAL.PrimalArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.geodes.*;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
@@ -193,14 +198,74 @@ public class ModItems {
     public static final RegistryObject<InfluenceArmorItem> INFLUENCE_HELMET = ITEMS.register("influence_helm",
             () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.HEAD, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
-    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_CHESTPLATE = ITEMS.register("influence_chest",
+    public static final RegistryObject<InfluenceArmorItem> INFLUENCE_CHESTPLATE = ITEMS.register("influence_chest",
             () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.CHEST, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
-    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_LEGGINGS = ITEMS.register("influence_leggings",
+    public static final RegistryObject<InfluenceArmorItem> INFLUENCE_LEGGINGS = ITEMS.register("influence_leggings",
             () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.LEGS, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
-    public static final RegistryObject< InfluenceArmorItem> INFLUENCE_BOOTS = ITEMS.register("influence_boots",
+    public static final RegistryObject<InfluenceArmorItem> INFLUENCE_BOOTS = ITEMS.register("influence_boots",
             () -> new InfluenceArmorItem(ModArmorTiers.INFLUENCE, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PrimalArmorItem> PRIMAL_HELMET = ITEMS.register("primal_helm",
+            () -> new PrimalArmorItem(ModArmorTiers.PRIMALITY, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PrimalArmorItem> PRIMAL_CHESTPLATE = ITEMS.register("primal_chest",
+            () -> new PrimalArmorItem(ModArmorTiers.PRIMALITY, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PrimalArmorItem> PRIMAL_LEGGINGS = ITEMS.register("primal_leggings",
+            () -> new PrimalArmorItem(ModArmorTiers.PRIMALITY, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PrimalArmorItem> PRIMAL_BOOTS = ITEMS.register("primal_boots",
+            () -> new PrimalArmorItem(ModArmorTiers.PRIMALITY, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WindArmorItem> WINDCONTROL_HELMET = ITEMS.register("wind_helm",
+            () -> new WindArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WindArmorItem> WINDCONTROL_CHESTPLATE = ITEMS.register("wind_chest",
+            () -> new WindArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WindArmorItem> WINDCONTROL_LEGGINGS = ITEMS.register("wind_leggings",
+            () -> new WindArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WindArmorItem> WINDCONTROL_BOOTS = ITEMS.register("wind_boots",
+            () -> new WindArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<EarthArmorItem> EARTHCONTROL_HELMET = ITEMS.register("earth_helm",
+            () -> new EarthArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<EarthArmorItem> EARTHCONTROL_CHESTPLATE = ITEMS.register("earth_chest",
+            () -> new EarthArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<EarthArmorItem> EARTHCONTROL_LEGGINGS = ITEMS.register("earth_leggings",
+            () -> new EarthArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<EarthArmorItem> EARTHCONTROL_BOOTS = ITEMS.register("earth_boots",
+            () -> new EarthArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WaterArmorItem> WATERCONTROL_HELMET = ITEMS.register("water_helm",
+            () -> new WaterArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WaterArmorItem> WATERCONTROL_CHESTPLATE = ITEMS.register("water_chest",
+            () -> new WaterArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WaterArmorItem> WATERCONTROL_LEGGINGS = ITEMS.register("water_leggings",
+            () -> new WaterArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<WaterArmorItem> WATERCONTROL_BOOTS = ITEMS.register("water_boots",
+            () -> new WaterArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<FireArmorItem> FIRECONTROL_HELMET = ITEMS.register("fire_helm",
+            () -> new FireArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<FireArmorItem> FIRECONTROL_CHESTPLATE = ITEMS.register("fire_chest",
+            () -> new FireArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<FireArmorItem> FIRECONTROL_LEGGINGS = ITEMS.register("fire_leggings",
+            () -> new FireArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<FireArmorItem> FIRECONTROL_BOOTS = ITEMS.register("fire_boots",
+            () -> new FireArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
 
 
