@@ -44,7 +44,7 @@ public enum ModArmorTiers implements ArmorMaterial {
         return Ingredient.of(ModItems.CONTROL_Shard.get());
     }),
 
-    POWER("power", 50, new int[]{8, 11, 13, 8}, 30,
+    POWER("power", 50, new int[]{9, 12, 14, 9}, 30,
             SoundEvents.ARMOR_EQUIP_LEATHER, 7.0F, 0.8F, () -> {
         return Ingredient.of(ModItems.POWER_Shard.get());
     }),

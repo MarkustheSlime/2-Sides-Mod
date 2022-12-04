@@ -12,7 +12,10 @@ import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.FIRE.Fir
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WATER.WaterArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WIND.WindArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.LIFE.LifeArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.POWER.PowerArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.PRIMAL.PrimalArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.SOUL.SoulArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.geodes.*;
 import net.MarkustheSlime.twosidesmod.item.custom.tutorial.TESTADVANCEDITEM;
@@ -266,6 +269,42 @@ public class ModItems {
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
     public static final RegistryObject<FireArmorItem> FIRECONTROL_BOOTS = ITEMS.register("fire_boots",
             () -> new FireArmorItem(ModArmorTiers.CONTROL, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PowerArmorItem> POWER_HELMET = ITEMS.register("power_helm",
+            () -> new PowerArmorItem(ModArmorTiers.POWER, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PowerArmorItem> POWER_CHESTPLATE = ITEMS.register("power_chest",
+            () -> new PowerArmorItem(ModArmorTiers.POWER, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PowerArmorItem> POWER_LEGGINGS = ITEMS.register("power_leggings",
+            () -> new PowerArmorItem(ModArmorTiers.POWER, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<PowerArmorItem> POWER_BOOTS = ITEMS.register("power_boots",
+            () -> new PowerArmorItem(ModArmorTiers.POWER, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<LifeArmorItem> LIFE_HELMET = ITEMS.register("life_helm",
+            () -> new LifeArmorItem(ModArmorTiers.LIFE, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<LifeArmorItem> LIFE_CHESTPLATE = ITEMS.register("life_chest",
+            () -> new LifeArmorItem(ModArmorTiers.LIFE, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<LifeArmorItem> LIFE_LEGGINGS = ITEMS.register("life_leggings",
+            () -> new LifeArmorItem(ModArmorTiers.LIFE, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<LifeArmorItem> LIFE_BOOTS = ITEMS.register("life_boots",
+            () -> new LifeArmorItem(ModArmorTiers.LIFE, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<SoulArmorItem> SOUL_HELMET = ITEMS.register("soul_helm",
+            () -> new SoulArmorItem(ModArmorTiers.SOUL, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<SoulArmorItem> SOUL_CHESTPLATE = ITEMS.register("soul_chest",
+            () -> new SoulArmorItem(ModArmorTiers.SOUL, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<SoulArmorItem> SOUL_LEGGINGS = ITEMS.register("soul_leggings",
+            () -> new SoulArmorItem(ModArmorTiers.SOUL, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
+    public static final RegistryObject<SoulArmorItem> SOUL_BOOTS = ITEMS.register("soul_boots",
+            () -> new SoulArmorItem(ModArmorTiers.SOUL, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.TWO_SIDES_ARMORS)));
 
 

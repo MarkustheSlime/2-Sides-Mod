@@ -18,10 +18,16 @@ import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WATER.Wa
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WATER.WaterArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WIND.WindArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.CONTROL.WIND.WindArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.LIFE.LifeArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.LIFE.LifeArmorRenderer;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.POWER.PowerArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.POWER.PowerArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.PRIMAL.PrimalArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.INFLUENCE.InfluenceArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.PRIMAL.PrimalArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.SOUL.SoulArmorItem;
+import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.SOUL.SoulArmorRenderer;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorItem;
 import net.MarkustheSlime.twosidesmod.item.custom.armors.geodes.VITALITY.VitalityArmorRenderer;
 import net.MarkustheSlime.twosidesmod.networking.ModMessages;
@@ -118,6 +124,9 @@ public class ClientEvents extends PlayerEnergy {
             GeoArmorRenderer.registerArmorRenderer(EarthArmorItem.class, () -> new EarthArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(WaterArmorItem.class, () -> new WaterArmorRenderer());
             GeoArmorRenderer.registerArmorRenderer(FireArmorItem.class, () -> new FireArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(PowerArmorItem.class, () -> new PowerArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(LifeArmorItem.class, () -> new LifeArmorRenderer());
+            GeoArmorRenderer.registerArmorRenderer(SoulArmorItem.class, () -> new SoulArmorRenderer());
         }
     }
 }
