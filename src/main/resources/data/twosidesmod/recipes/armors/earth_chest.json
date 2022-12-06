@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XNX",
+    "XMX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "twosidesmod:elementalist_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "M": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "twosidesmod:earth_chest"
+  }
+}

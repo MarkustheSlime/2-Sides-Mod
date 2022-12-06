@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XNX",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "item": "twosidesmod:mob_king_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "twosidesmod:influence_helm"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "X X",
+    "N N"
+  ],
+  "key": {
+    "X": {
+      "item": "twosidesmod:knightly_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "twosidesmod:soul_boots"
+  }
+}

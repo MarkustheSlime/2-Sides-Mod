@@ -136,6 +136,20 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
     public static final RegistryObject<Item> DWARVEN_BULB = ITEMS.register("dwarven_bulb",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> SBOSS_SHARD = ITEMS.register("knightly_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> LBOSS_SHARD = ITEMS.register("mage_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> POBOSS_SHARD = ITEMS.register("toughness_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> CBOSS_SHARD = ITEMS.register("elementalist_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> PRBOSS_SHARD = ITEMS.register("druid_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> IBOSS_SHARD = ITEMS.register("mob_king_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> VBOSS_SHARD = ITEMS.register("immortalist_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
 
     public static final RegistryObject<Item> TRANSMUTATION_SERUM = ITEMS.register("gorgon_serum",
             () -> new BucketItem(ModFluids.SOURCE_GS, new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_FLUIDS)

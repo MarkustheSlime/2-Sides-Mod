@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XNX",
+    "XMX"
+  ],
+  "key": {
+    "X": {
+      "item": "twosidesmod:elementalist_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "M": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "result": {
+    "item": "twosidesmod:water_leggings"
+  }
+}
