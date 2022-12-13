@@ -119,6 +119,9 @@ public class ModItems {
     public static final RegistryObject<Item> MOON_STONE_ANGEL_SPAWNER = ITEMS.register("moon_stone_angel_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.MOON_STONE_ANGEL, 0x35249f , 0x41f6ff   ,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> SBOSS_SPAWNER = ITEMS.register("sboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.SBOSS, 0xfafbe3  , 0x900C3F    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
 
     public static final RegistryObject<Item> D_Casing = ITEMS.register("d_casing",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));

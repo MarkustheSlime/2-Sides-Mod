@@ -1,6 +1,7 @@
 package net.MarkustheSlime.twosidesmod.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyEntity;
@@ -58,6 +59,11 @@ public class ModEntityTypes {
                             .sized(5f, 10f).fireImmune()
                             .build(new ResourceLocation(TwoSidesMod.MOD_ID, "moonshard_angel").toString()));
 
+    public static final RegistryObject<EntityType<SBossEntity>> SBOSS =
+            ENTITY_TYPES.register("sboss",
+                    () -> EntityType.Builder.of(SBossEntity::new, MobCategory.MONSTER)
+                            .sized(3f, 6f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "sboss").toString()));
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemRenderer;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyRenderer;
@@ -155,6 +156,7 @@ public class TwoSidesMod
             EntityRenderers.register(ModEntityTypes.SUN_TROLL.get(), SunTrollRenderer::new);
             EntityRenderers.register(ModEntityTypes.MOON_FAIRY.get(), MoonFairyRenderer::new);
             EntityRenderers.register(ModEntityTypes.MOON_STONE_ANGEL.get(), MoonStoneAngelRenderer::new);
+            EntityRenderers.register(ModEntityTypes.SBOSS.get(), SBossRenderer::new);
         }
     }
     @SubscribeEvent
