@@ -4,14 +4,14 @@ import com.mojang.logging.LogUtils;
 import net.MarkustheSlime.twosidesmod.block.ModBlocks;
 import net.MarkustheSlime.twosidesmod.block.entity.ModBlockEntities;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.cboss.CBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.iboss.IBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.lboss.LBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.poboss.QBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.poboss.QBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.rboss.RBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossRenderer;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.vboss.VBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.cboss.CBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.iboss.IBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.lboss.LBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.mboss.MBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.poboss.QBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.rboss.RBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.sboss.SBossRenderer;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.vboss.VBossRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonRenderer;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemRenderer;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyRenderer;
@@ -170,6 +170,7 @@ public class TwoSidesMod
             EntityRenderers.register(ModEntityTypes.RBOSS.get(), RBossRenderer::new);
             EntityRenderers.register(ModEntityTypes.IBOSS.get(), IBossRenderer::new);
             EntityRenderers.register(ModEntityTypes.VBOSS.get(), VBossRenderer::new);
+            EntityRenderers.register(ModEntityTypes.MBOSS.get(), MBossRenderer::new);
         }
     }
     @SubscribeEvent

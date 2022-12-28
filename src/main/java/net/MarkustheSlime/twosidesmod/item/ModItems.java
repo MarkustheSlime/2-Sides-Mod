@@ -72,6 +72,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
     public static final RegistryObject<Item> METEORITE_DEBRIS = ITEMS.register("meteorite_debris",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
+    public static final RegistryObject<Item> DEITY_ESSENCE = ITEMS.register("god_soul",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));
 
     public static final RegistryObject<Item> GLOBSQUACH = ITEMS.register("globsquach",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_FOODS)

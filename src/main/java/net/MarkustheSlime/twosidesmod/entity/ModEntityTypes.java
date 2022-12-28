@@ -1,13 +1,14 @@
 package net.MarkustheSlime.twosidesmod.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.cboss.CBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.iboss.IBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.lboss.LBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.poboss.QBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.rboss.RBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.vboss.VBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.cboss.CBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.iboss.IBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.lboss.LBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.mboss.MBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.poboss.QBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.rboss.RBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.sboss.SBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.vboss.VBossEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyEntity;
@@ -17,9 +18,6 @@ import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.item.enchantment.FireAspectEnchantment;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.TntBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -100,6 +98,11 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(VBossEntity::new, MobCategory.MONSTER)
                             .sized(3.5f, 5f)
                             .build(new ResourceLocation(TwoSidesMod.MOD_ID, "vboss").toString()));
+    public static final RegistryObject<EntityType<MBossEntity>> MBOSS =
+            ENTITY_TYPES.register("mboss",
+                    () -> EntityType.Builder.of(MBossEntity::new, MobCategory.MONSTER)
+                            .sized(3.5f, 5f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "mboss").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

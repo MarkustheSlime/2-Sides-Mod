@@ -3,13 +3,14 @@ package net.MarkustheSlime.twosidesmod.event;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
 import net.MarkustheSlime.twosidesmod.entity.ModEntityTypes;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.cboss.CBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.iboss.IBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.lboss.LBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.poboss.QBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.rboss.RBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossEntity;
-import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.vboss.VBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.cboss.CBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.iboss.IBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.lboss.LBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.mboss.MBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.poboss.QBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.rboss.RBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.sboss.SBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.geodes.bosses.vboss.VBossEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_stone_angel.MoonStoneAngelEntity;
@@ -138,6 +139,7 @@ public class ModEvents {
             event.put(ModEntityTypes.RBOSS.get(), RBossEntity.setAttributes());
             event.put(ModEntityTypes.IBOSS.get(), IBossEntity.setAttributes());
             event.put(ModEntityTypes.VBOSS.get(), VBossEntity.setAttributes());
+            event.put(ModEntityTypes.MBOSS.get(), MBossEntity.setAttributes());
         }
     }
 
