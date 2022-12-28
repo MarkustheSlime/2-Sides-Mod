@@ -32,7 +32,7 @@ public class VitalityArmorItem extends GeoArmorItem implements IAnimatable {
                     .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1)).build();
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP2 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.REGENERATION, 20, 1)).build();
+                    .put(ModArmorTiers.VITALITY, new MobEffectInstance(MobEffects.REGENERATION, 200, 1)).build();
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP3 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())

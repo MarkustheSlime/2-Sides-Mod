@@ -29,7 +29,7 @@ public class LifeArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorTiers.LIFE, new MobEffectInstance(MobEffects.REGENERATION, 20, 0)).build();
+                    .put(ModArmorTiers.LIFE, new MobEffectInstance(MobEffects.REGENERATION, 200, 0)).build();
 
     public LifeArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);

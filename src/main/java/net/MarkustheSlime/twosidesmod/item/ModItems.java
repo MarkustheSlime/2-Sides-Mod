@@ -122,6 +122,24 @@ public class ModItems {
     public static final RegistryObject<Item> SBOSS_SPAWNER = ITEMS.register("sboss_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.SBOSS, 0xfafbe3  , 0x900C3F    ,
                     new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> LBOSS_SPAWNER = ITEMS.register("lboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.LBOSS, 0x0e8b03  , 0x002cff    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> QBOSS_SPAWNER = ITEMS.register("qboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.QBOSS, 0x0b6a03  , 0x0f8804    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> CBOSS_SPAWNER = ITEMS.register("cboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.CBOSS, 0xeafafa  , 0x000000    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> RBOSS_SPAWNER = ITEMS.register("rboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.RBOSS, 0x000000  , 0xa20303    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> IBOSS_SPAWNER = ITEMS.register("iboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.IBOSS, 0x4a4a4a  , 0xec5303    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
+    public static final RegistryObject<Item> VBOSS_SPAWNER = ITEMS.register("vboss_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.VBOSS, 0xf07fff  , 0xc03cd2    ,
+                    new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ENTITIES)));
 
     public static final RegistryObject<Item> D_Casing = ITEMS.register("d_casing",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TWO_SIDES_ITEMS)));

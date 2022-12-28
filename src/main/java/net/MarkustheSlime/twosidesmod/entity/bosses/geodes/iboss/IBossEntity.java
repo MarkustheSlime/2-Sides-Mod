@@ -1,39 +1,26 @@
-package net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss;
+package net.MarkustheSlime.twosidesmod.entity.bosses.geodes.iboss;
 
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
-import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_fairy.SunFairyEntity;
-import net.MarkustheSlime.twosidesmod.entity.sun_woods.sun_troll.SunTrollEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.AbstractGolem;
-import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.SnowGolem;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
-import net.minecraft.world.entity.monster.*;
-import net.minecraft.world.entity.monster.hoglin.Hoglin;
-import net.minecraft.world.entity.monster.piglin.Piglin;
-import net.minecraft.world.entity.monster.piglin.PiglinBrute;
-import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.AnimationState;
@@ -47,13 +34,10 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-import javax.annotation.Nullable;
-import java.util.List;
-
-public class SBossEntity extends Monster implements IAnimatable {
+public class IBossEntity extends Monster implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(Component.translatable("entity.twosidesmod.sboss"), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
+    private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(Component.translatable("entity.twosidesmod.iboss"), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
 
     public void startSeenByPlayer(ServerPlayer pPlayer) {
         super.startSeenByPlayer(pPlayer);
@@ -67,23 +51,24 @@ public class SBossEntity extends Monster implements IAnimatable {
 
     protected void customServerAiStep() {
         if (this.tickCount % 20 == 0) {
-                this.heal(1.0F);
+                this.heal(5.0F);
             }
 
             this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
         }
 
-    public SBossEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+    public IBossEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 1000.0D)
-                .add(Attributes.ATTACK_DAMAGE, 25.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2f)
-                .add(Attributes.ATTACK_KNOCKBACK, 2.0f)
+                .add(Attributes.MAX_HEALTH, 1600.0D)
+                .add(Attributes.ATTACK_DAMAGE, 40.0f)
+                .add(Attributes.ATTACK_SPEED, 0.5f)
+                .add(Attributes.MOVEMENT_SPEED, 0.5f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 2.0f)
+                .add(Attributes.ATTACK_KNOCKBACK, 25.0f)
                 .build();
     }
 
@@ -91,8 +76,8 @@ public class SBossEntity extends Monster implements IAnimatable {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.3D));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, SnowGolem.class, true));
@@ -134,7 +119,7 @@ public class SBossEntity extends Monster implements IAnimatable {
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.METAL_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.STONE_STEP, 0.15F, 1.0F);
     }
 
     protected SoundEvent getAmbientSound() {
@@ -142,11 +127,11 @@ public class SBossEntity extends Monster implements IAnimatable {
     }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return SoundEvents.IRON_GOLEM_HURT;
+        return SoundEvents.STONE_HIT;
     }
 
     protected SoundEvent getDeathSound() {
-        return SoundEvents.IRON_GOLEM_DEATH;
+        return SoundEvents.STONE_BREAK;
     }
 
     protected float getSoundVolume() {

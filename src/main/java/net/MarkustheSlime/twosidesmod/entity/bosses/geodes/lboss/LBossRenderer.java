@@ -1,4 +1,4 @@
-package net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy;
+package net.MarkustheSlime.twosidesmod.entity.bosses.geodes.lboss;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -10,23 +10,23 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class MoonFairyRenderer extends GeoEntityRenderer<MoonFairyEntity> {
-    public MoonFairyRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new MoonFairyModel());
-        this.shadowRadius = 0.3f;
+public class LBossRenderer extends GeoEntityRenderer<LBossEntity> {
+    public LBossRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new LBossModel());
+        this.shadowRadius = 1.5f;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(MoonFairyEntity instance) {
-        return new ResourceLocation(TwoSidesMod.MOD_ID, "textures/entity/moon_fairy.png");
+    public ResourceLocation getTextureLocation(LBossEntity instance) {
+        return new ResourceLocation(TwoSidesMod.MOD_ID, "textures/entity/lboss.png");
     }
 
     @Override
-    public RenderType getRenderType(MoonFairyEntity animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(LBossEntity animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource renderTypeBuffer,
                                     @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         stack.scale(0.8f, 0.8f, 0.8f);
-        return RenderType.entityTranslucent(getTextureLocation(animatable));
+        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }

@@ -1,7 +1,13 @@
 package net.MarkustheSlime.twosidesmod.entity;
 
 import net.MarkustheSlime.twosidesmod.TwoSidesMod;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.cboss.CBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.iboss.IBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.lboss.LBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.poboss.QBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.rboss.RBossEntity;
 import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.sboss.SBossEntity;
+import net.MarkustheSlime.twosidesmod.entity.bosses.geodes.vboss.VBossEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.deep_gorgon.DeepGorgonEntity;
 import net.MarkustheSlime.twosidesmod.entity.dwarven_mines.dm_golem.DmGolemEntity;
 import net.MarkustheSlime.twosidesmod.entity.moon_caverns.moon_fairy.MoonFairyEntity;
@@ -64,6 +70,37 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(SBossEntity::new, MobCategory.MONSTER)
                             .sized(3f, 6f)
                             .build(new ResourceLocation(TwoSidesMod.MOD_ID, "sboss").toString()));
+    public static final RegistryObject<EntityType<LBossEntity>> LBOSS =
+            ENTITY_TYPES.register("lboss",
+                    () -> EntityType.Builder.of(LBossEntity::new, MobCategory.MONSTER)
+                            .sized(1f, 6f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "lboss").toString()));
+    public static final RegistryObject<EntityType<QBossEntity>> QBOSS =
+            ENTITY_TYPES.register("qboss",
+                    () -> EntityType.Builder.of(QBossEntity::new, MobCategory.MONSTER)
+                            .sized(7.5f, 8f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "qboss").toString()));
+    public static final RegistryObject<EntityType<CBossEntity>> CBOSS =
+            ENTITY_TYPES.register("cboss",
+                    () -> EntityType.Builder.of(CBossEntity::new, MobCategory.MONSTER)
+                            .sized(8f, 11.8f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "cboss").toString()));
+    public static final RegistryObject<EntityType<RBossEntity>> RBOSS =
+            ENTITY_TYPES.register("rboss",
+                    () -> EntityType.Builder.of(RBossEntity::new, MobCategory.MONSTER)
+                            .sized(5f, 12.5f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "rboss").toString()));
+    public static final RegistryObject<EntityType<IBossEntity>> IBOSS =
+            ENTITY_TYPES.register("iboss",
+                    () -> EntityType.Builder.of(IBossEntity::new, MobCategory.MONSTER)
+                            .sized(2.5f, 6.0f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "iboss").toString()));
+    public static final RegistryObject<EntityType<VBossEntity>> VBOSS =
+            ENTITY_TYPES.register("vboss",
+                    () -> EntityType.Builder.of(VBossEntity::new, MobCategory.MONSTER)
+                            .sized(3.5f, 5f)
+                            .build(new ResourceLocation(TwoSidesMod.MOD_ID, "vboss").toString()));
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

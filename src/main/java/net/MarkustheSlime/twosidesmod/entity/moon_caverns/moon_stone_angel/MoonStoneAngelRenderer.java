@@ -27,6 +27,6 @@ public class MoonStoneAngelRenderer extends GeoEntityRenderer<MoonStoneAngelEnti
                                     @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         stack.scale(0.8f, 0.8f, 0.8f);
-        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+        return RenderType.entityTranslucent(getTextureLocation(animatable));
     }
 }
